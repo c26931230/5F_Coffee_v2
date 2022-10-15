@@ -1,0 +1,1344 @@
+$main1:#0A134D;
+$main2:#fff;
+$main3:#E77710;
+$main4:#F1D00A;
+$main5:#607EAA;
+$main6:#13334E;
+@mixin flex1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+@mixin btn1 {
+    color: $main2;
+    padding: 10px 20px;
+    background-color: $main3;
+    border-radius: 5px;
+    transition: .5s;
+    display: inline-block;
+}
+@mixin btn1_hover {
+    background-color: $main3;
+    color: $main2;
+    transform: scale(0.9);
+}
+@mixin btn_2{
+    font-size: 18px;
+    color: $main3;
+    border-bottom: $main3 1px solid;
+    transition: .5s;
+    font-family: 'David Libre', serif;
+    &:hover{
+        transform: scale(0.9);
+    }
+}
+#switch{
+    display: none;
+}
+// -----nav------
+.header{
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    background-color: $main1;
+    // background: linear-gradient(to right, #13334E, #0A134D);
+    position: relative;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 10;
+    .wrap{
+        width: 1200px;
+        // border: 1px red solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo_box img{
+    vertical-align: top;
+    height: 45px;
+}
+.nav{
+    li{
+        :after{
+                content: '';
+                width: 0%;
+                height: 2px;
+                background: $main4;
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+                }
+                :hover::after{
+                    width: 100%;
+                }
+    }
+    li.tab{
+        :after{
+            content: '';
+                width: 100%;
+                height: 2px;
+                background: $main4;
+                display: block;
+                margin: auto;
+                // transition: 0.5s;
+        }
+    }
+    a{
+        color: $main2;
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
+        font-size: 16px;
+    }
+}
+.function_box{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    a{
+        font-size: 16px;
+        color: $main2;
+        display: inline-block;
+        opacity: 0.5;
+        transition: 1s;
+        &:first-child{
+            margin-right: 10px;
+        }
+        &:hover{
+            color: $main4;
+            opacity: 1;
+            transition: 1s;
+        }
+        
+    }
+    a.tab{
+        color: $main4;
+        opacity: 1;
+    }
+}
+// ------phone nav------
+@media screen and (max-width:767px) {
+    .logo_box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img{
+            position: relative;
+            left: 15px;
+        }
+    }
+
+   
+    #switch:checked + .header .nav{
+        left: 0;
+        opacity: 1;
+        transition:opacity 1s 2s, left 1s 1s;
+    }
+    #switch:checked + .header .hb span:nth-child(2){
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    #switch:checked + .header .hb span:nth-child(1){
+        top: 19px;
+        transform: rotate(45deg);
+        transition: top .5s 0s ,transform 1s 1s;
+    }
+    #switch:checked + .header .hb span:nth-child(3){
+        top: 19px;
+        transform: rotate(-45deg);
+        transition: top .5s 0s ,transform 1s 1s;
+    }
+    .header{
+        padding: 10px;
+        .wrap{
+            width: 100%;
+        }
+    }
+    .hb{
+        width: 36px;
+        height: 36px;
+        position: relative;
+        span{
+            width: 28px;
+            height: 3px;
+            background-color: $main2;
+            margin: auto;
+            position: absolute;
+        }
+        
+    }
+    .hb span:nth-child(1){
+        top: 9px;
+        transform: rotate(0deg);
+        transition: transform 1s 0s, top 1s 1s ;
+    }
+    .hb span:nth-child(2){
+        top: 18px;
+        opacity: 1;
+        transition: opacity 1s 1s;
+    }
+    .hb span:nth-child(3){
+        top: 27px;
+        transition: transform 1s 0s, top 1s 1s ;
+    }
+    .nav{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background-color: $main6;
+        opacity: .2;
+        transition: left 1s 1s, opacity 1s 1s; 
+        li{
+            :after{
+                background: none;
+            }
+        }
+        li:last-child{
+            a{
+                border-bottom: none;
+            }
+        }
+        a{
+            width: 100%;
+            border-bottom: 1px solid $main4;
+            background-color: #E7771000;
+            
+            &:hover{
+                background-color: $main3;
+                transition: 1s;
+            }
+            
+        }
+        // a.faq{
+        //     border-bottom: none;
+        // }
+        // a:last-child{
+            
+        // }
+    }
+    .function_box a{
+        font-size: 20px;
+    }
+}
+// -----ipad nav-----
+@media screen and (min-width:768px) {
+    .header{
+        padding: 10px 50px;
+        .wrap{
+            width: 100%;
+        }
+    }
+    .hb{
+        display: none;
+    }
+    .nav{
+        position: relative;
+        width: 85%;
+        text-align: right;
+        li{
+            display: inline-block;
+        }
+    }
+}
+*{
+    font-family: 'David Libre', serif;
+    box-sizing: border-box;
+    
+}
+a{
+    text-decoration: none;
+}
+body{
+    padding-top: 65px;
+}
+.index_banner{
+    background-color: $main1;
+    .wrap{
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 30% 40% 30%;
+        width: 100%;
+        min-height: calc(100vh - 65px);
+        max-height: auto;
+        
+        
+        .item:nth-child(1){
+            grid-area: 1/1/2/3;
+            position: relative;
+            padding: 20px;
+            h1{
+                font-size: 70px;
+                font-weight: 600;
+                font-family: 'David Libre', serif;
+                color: $main2;
+                text-align: center;
+                line-height: 130%;
+            }
+        }
+        .item:nth-child(2){
+            grid-area: 2/1/3/2;
+            position: relative;
+            padding: 40px 20px;
+            p{
+                font-size: 16px;
+                font-family: 'David Libre', serif;
+                color: $main2;
+                opacity: .5;
+                width: 100%;
+                line-height: 150%;
+            }
+        }
+        .item:nth-child(3){
+            grid-area: 3/1/4/2;
+            position: relative;
+            padding: 20px;
+            .btn{
+                font-size: 18px;
+                border-radius: 30px;
+                border: 1px solid $main4;
+                padding: 10px 25px;
+                position: absolute;
+                color: $main2;
+                text-decoration: none;
+                display: inline-block;
+                font-family: 'David Libre', serif;
+            }
+        }
+        .item:nth-child(4){
+            grid-area: 2/2/4/3;
+            position: relative;
+            img{
+                width: 100%;
+                // height: 80%;
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                // left: 0%;
+                right: 0;
+            }
+        }
+    }
+}
+// -----ipad 直 首頁banner-----
+@media screen and (min-width:768px) {
+    .index_banner{
+        .wrap{
+            .item:nth-child(1){
+                padding: 0;
+                h1{
+                    font-size: 80px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    // left: 50%;
+                    width: 100%;
+                }
+            }
+            .item:nth-child(2){
+                padding: 0 50px;
+                p{
+                    font-size: 20px;
+                    width: 80%;
+                    line-height: 150%;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                }
+            }
+            .item:nth-child(3){
+                padding: 0 50px;
+            }
+            .item:nth-child(4){
+                img{
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+// -----ipad橫 首頁banner-----
+@media screen and (min-width:1024px) {
+    .index_banner{
+        .wrap{
+            grid-template-columns: 70% 30%;
+            grid-template-rows: auto auto auto;
+            .item:nth-child(1){
+                grid-area: 1/1/2/2;
+                padding: 40px 30px 30px 45px;
+                h1{
+                    text-align: left;
+                }
+            }
+            .item:nth-child(2){
+                grid-area: 2/1/3/2;
+                padding: 30px;
+                padding-left: 45px;
+                p{
+                    width: 50%;
+                    font-size: 16px;
+                }
+            }
+            .item:nth-child(3){
+                grid-area: 3/1/4/2;
+                padding: 30px;
+                padding-left: 45px;
+            }
+            .item:nth-child(4){
+                grid-area: 1/2/4/3;
+                img{
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// -----小手機 首頁banner-----
+@media screen and (max-width:400px) {
+    .index_banner{
+        .wrap{
+            .item:nth-child(1){
+                h1{
+                    font-size: 45px;
+                }
+            }
+            .item:nth-child(2){
+                padding: 10px 15px;
+                p{
+                    font-size: 14px;
+                    width: 100%;
+                }
+            }
+            .item:nth-child(3){
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+// -----Slogan 手機------
+
+.slogan{
+    margin: 50px 0;
+    overflow: hidden;
+    .txt_box{
+        p{
+            font-size: 40px;
+            width: fit-content;
+            margin: 0 auto;
+            color: $main5;
+            font-weight: 600;
+            font-family: 'David Libre', serif;
+            padding: 30px;
+            line-height: 120%;
+        }
+    }
+    .img_box{
+        width: 100%;
+        height: 300px;
+        padding: 0 10px;
+        display: block;
+        margin-top: 100px;
+        margin-bottom: 80px;
+        .carousel_btn{
+            display: none;
+        }
+        .carousel_box{
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        .item{
+            width: 200px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: .4s ease;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: auto;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+#carousel_btn1:checked ~ .carousel_box .item3,
+#carousel_btn2:checked ~ .carousel_box .item1,
+#carousel_btn3:checked ~ .carousel_box .item2
+{
+    transform: translateX(-45%) translateY(-32%) scale(.8);
+    z-index: 0;
+    transition: .8s;
+}
+
+#carousel_btn1:checked ~ .carousel_box .item2,
+#carousel_btn2:checked ~ .carousel_box .item3,
+#carousel_btn3:checked ~ .carousel_box .item1
+{
+    transform: translateX(45%) translateY(-20%) scale(.8);
+    z-index: 0;
+    transition: .8s;
+}
+#carousel_btn1:checked ~ .carousel_box .item1,
+#carousel_btn2:checked ~ .carousel_box .item2,
+#carousel_btn3:checked ~ .carousel_box .item3
+{
+    transform: translateX(0%);
+    z-index: 1;
+    transition: .8s;
+}
+// 280小手機
+@media screen and (max-width:350px) {
+    .slogan{
+        .txt_box{
+            p{
+                padding: 0 5px;
+            }
+        }
+        .img_box{
+            .item{
+                width: 150px;
+                border: 1px rebeccapurple solid;
+            }
+        }
+    }
+}
+// -----slogan ipad 直向-----
+@media screen and (min-width:768px) {
+    .slogan{
+        display: flex;
+        flex-wrap: wrap;
+        .txt_box{
+            width: 50%;
+            order: 2;
+            p{
+                padding: 80px 0;
+                margin: 0;
+                font-size: 50px;
+            }
+        }
+        .img_box{
+            width: 50%;
+            order: 1;
+        }
+    }
+}
+// ---slogan 平板橫------
+@media screen and (min-width:1024px) {
+    .slogan{ 
+        .txt_box{
+            width: 45%;
+            p{
+                padding: 80px;
+            }
+        }
+        .img_box{
+            width: 55%;
+            padding-left: 150px;
+            .item{
+                width: 250px;
+            }
+        }   
+    }
+#carousel_btn1:checked ~ .carousel_box .item3,
+#carousel_btn2:checked ~ .carousel_box .item1,
+#carousel_btn3:checked ~ .carousel_box .item2
+{
+    transform: translateX(-80%) translateY(-32%) scale(.8);
+}
+
+#carousel_btn1:checked ~ .carousel_box .item2,
+#carousel_btn2:checked ~ .carousel_box .item3,
+#carousel_btn3:checked ~ .carousel_box .item1
+{
+    transform: translateX(80%) translateY(-20%) scale(.8);
+}
+}
+
+// ----筆電 slogan-----
+@media screen and (min-width:1200px) {
+    .slogan{
+        .txt_box{
+            p{
+                padding: 100px 0 0 80px;
+                margin: 0;
+                font-size: 50px;
+            }
+        }
+        .img_box{
+            padding-left: 102px;
+            .item{
+                width: 256px;
+            }
+        }
+        
+    }
+#carousel_btn1:checked ~ .carousel_box .item3,
+#carousel_btn2:checked ~ .carousel_box .item1,
+#carousel_btn3:checked ~ .carousel_box .item2
+{
+    transform: translateX(-70%) translateY(-32%) scale(.8);
+
+}
+
+#carousel_btn1:checked ~ .carousel_box .item2,
+#carousel_btn2:checked ~ .carousel_box .item3,
+#carousel_btn3:checked ~ .carousel_box .item1
+{
+    transform: translateX(77%) translateY(-20%) scale(.8);
+}
+}
+
+// ----滑入動畫 slogan-----
+.slidein{
+    opacity: 0;
+    transition: 2.5s;
+}
+
+.ltr{
+    transform: translateX(-30%) scale(0.8);
+}
+
+
+
+.slidein.active{
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
+
+.fadein{
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 2.5s;
+}
+
+.fadein.active{
+    opacity: 1;
+    transform: scale(1);
+}
+// -----new arrivals-----
+.new_arrivals{
+    // min-height: calc(100vh - 65px);
+    min-width: 100%;
+    position: relative;
+    // padding-bottom: 10px;
+    margin-bottom: 100px;
+    // border: 1px rebeccapurple solid;
+    h2{
+        color: $main5;
+        text-align: center;
+        display: block;
+        margin-top: 50px;
+        font-size: 50px;
+        font-weight: 600;
+        font-family: 'David Libre', serif;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 14px;
+        text-align: center;
+        padding: 0 5px;
+        color: #33333350;
+        font-family: 'David Libre', serif;
+    }
+    .btn_box{
+        text-align: center;
+    }
+    .btn_2{
+        @include btn_2();
+        display: inline-block;
+    }
+}
+@keyframes scroll{
+    from{transform: translateX(100%)}
+    to{transform: translateX(-100%)}
+}
+  
+@keyframes scroll2{
+    from{transform: translateX(0%)}
+    to{transform: translateX(-200%)}
+}
+.sliders{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    // border: 1px red solid;
+    padding: 50px 0;
+    .wrapper{
+        display: flex;
+        
+        &:nth-child(1){
+            animation: scroll 40s linear infinite;
+            animation-delay: -20s;
+        }
+        &:nth-child(2){
+            animation: scroll2 40s linear infinite;
+        }
+        .item{
+            height: 200px;
+            margin: 0 10px;
+            position: relative;
+            img{
+            height: 100%;
+            }
+            .desq{
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #0A134D10;
+            }
+            h3{
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+                font-family: 'David Libre', serif;
+            }
+       }
+    }
+}
+
+
+
+/* -----------手機location------------ */
+.location{
+    position: relative;
+    padding-bottom: 13%;
+    background: #13334E;
+    color: #fff;
+    overflow: hidden;
+    // border: 1px solid wheat;
+    h2{
+        margin-bottom: 0px;
+        font-size: 40px;
+        font-weight: 600;
+        text-align: right;
+        // padding: 10px 30px 10px 0;
+        padding: 30px;
+        font-family: 'David Libre', serif;
+    }
+    .wrap {
+        width: 350px;
+        margin: 0 auto;
+        height: 560px;
+        background: url(image/map.png) 50% 45%/80% no-repeat;
+        position: relative;
+    }
+    .school,.shop {
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        padding-top: 2%;
+        border-radius: 50%;
+        border: $main4 solid 2px;
+        color: $main2;
+        position: absolute;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: .5s;
+        background-color: $main6;
+        &:hover{
+            background-color: $main3;
+            transform: scale(0.9);
+            border: $main3 1px solid;
+        }
+        h3{
+            font-size: 20px;
+        }
+        h4{
+            width: 70%;
+            line-height: 120%;
+            margin: 0 auto;
+            font-size: 12px;
+        }
+        i{
+            font-size: 30px;
+        }
+    }
+    .school{
+       left: 0%;
+       top: 0%;
+    }
+    .shop{
+        right: 0%;
+        bottom: 0%;
+    }
+    .line {
+        position: absolute;
+        height: 3px;
+        background: linear-gradient(to right, #F1D00A 6px, transparent 3px) 0 0/12px 1px;
+    }
+    
+    .line1 {
+        top: 290px;
+        // right: 0px;
+        left: 16px;
+        transform: rotate(60deg);
+        transform-origin: right top;
+        width: 135px;
+    }
+    .line2 {
+        top: 302px;
+        right: 50px;
+        // left: 534px;
+        transform: rotate(56deg);
+        transform-origin: left top;
+        width: 135px
+    }
+}
+
+// ---280px小手機 location----
+@media screen and (max-width:350px) {
+    .location {
+        .wrap {
+            position: relative;
+            z-index: 5;
+            justify-content: center; 
+            width: 250px;
+            height: 520px;
+            // border: 1px solid aquamarine;
+            margin: auto;
+            background: url(image/map.png) 50% 50%/240px no-repeat
+            /*                    left距離 / top距離 /高度 */
+        }
+        .school,.shop {
+            width: 160px;
+            height: 160px;
+            display: inline-block;
+            padding-top: 2%;
+            border-radius: 50%;
+            border: $main4 solid 2px;
+            color: $main2;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            transition: .5s;
+            background-color: $main6;
+            &:hover{
+                background-color: $main3;
+                transform: scale(0.9);
+                border: $main3 1px solid;
+            }
+            h3{
+                font-size: 18px;
+            }
+            h4{
+                width: 70%;
+                line-height: 120%;
+                margin: 0 auto;
+                font-size: 12px;
+            }
+            i{
+                font-size: 26px;
+            }
+        }
+        .school{
+           left: 0%;
+           top: 0%;
+        }
+        .shop{
+            right: 0%;
+            bottom: 0%;
+        } 
+        .line1 {
+            top: 290px;
+            // right: 0px;
+            left: -23px;
+            transform: rotate(70deg);
+            transform-origin: right top;
+            width: 135px;
+        }
+        .line2 {
+            top: 295px;
+            right: -5px;
+            // left: 534px;
+            transform: rotate(60deg);
+            transform-origin: left top;
+            width: 135px
+        }
+    }
+}
+
+// -------ipad直- location----
+@media screen and (min-width: 768px) {
+    .location {
+        .wrap {
+            position: relative;
+            z-index: 5;
+            justify-content: center; 
+            width: 800px;
+            height: 520px;
+            // border: 1px solid aquamarine;
+            margin: auto;
+            background: url(image/map.png) 50% 10px/400px no-repeat
+            /*   left距離 / top距離 /高度 */
+        }
+        .school{
+            left: 5%;
+        }
+        .shop{
+            right: 5%;
+        }
+        .line1 {
+            top: 290px;
+            // right: 0px;
+            left: 130px;
+            transform: rotate(45deg);
+            transform-origin: right top;
+            width: 235px;
+        }
+        .line2 {
+            top: 305px;
+            right: 180px;
+            transform: rotate(20deg);
+            transform-origin: left top;
+            width: 235px;
+        }
+    }
+   
+}
+// ----筆電 ipad橫 location-----
+@media screen and (min-width:1024px) {
+    .location {
+        h2{
+            font-size: 50px;
+        }
+        .wrap {
+            position: relative;
+            z-index: 5;
+            justify-content: center; 
+            width: 1100px;
+            height: 520px;
+            // border: 1px solid aquamarine;
+            margin: auto;
+            background: url(image/map.png) 50% 10px/400px no-repeat
+            /*                    left距離 / top距離 /高度 */
+        }
+        .school, .shop {
+            width: 200px;
+            height: 200px;
+            h3{
+                font-size: 22px;
+            }
+            h4{
+                font-size: 12px;
+                width: 60%;
+            }
+        }
+        .school{
+            left: 10%;
+         }
+         .shop{
+             right: 10%;
+             bottom: 5%;
+         }
+         .line {
+             position: absolute;
+             height: 3px;
+             background: linear-gradient(to right, #F1D00A 6px, transparent 3px) 0 0/12px 1px;
+         }
+         
+         .line1 {
+            top: 290px;
+            // right: 0px;
+            left: 220px;
+            transform: rotate(30deg);
+            transform-origin: right top;
+            width: 300px;
+         }
+         .line2 {
+            top: 305px;
+            right: 210px;
+            transform: rotate(15deg);
+            transform-origin: left top;
+            width: 355px;
+         }
+    }
+    
+}
+
+
+
+
+// -----reservation手機-----
+section.reservation{
+    min-height: calc(100vh - 65px);
+    padding: 50px 0;
+    background-image:url(image/r6.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+   .item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    // border: 1px red solid;
+    justify-content: space-around;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 50px 10px;
+    width: 100%;
+    height: 40%;
+    background-color: #13334E90;
+    .text_box{
+        width: 100%;
+        text-align: center;
+        color: $main2;
+        // border: 1px solid red;
+        h2{
+            margin-bottom: 10px;
+            font-size: 40px;
+            font-family: 'David Libre', serif;
+            font-weight: 600;
+        }
+        p{
+            font-size: 14px;
+            font-family: 'David Libre', serif;
+            line-height: 120%;
+            // opacity: .5;
+        }
+    }
+    .btn_box{
+        width: fit-content;
+        // border: 1px solid red;
+        // text-align: center;
+        // margin: 30px 0;
+        a{
+            display: inline-block;
+            color: $main2;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: 1px solid $main4;
+            transition: .5s;
+            font-size: 14px;
+            &:hover{
+                @include btn1_hover();
+                border: 1px solid $main3;
+            }
+        }
+    }
+   }
+}
+
+// -----reservation小手機-----
+@media screen and (max-width:400px) {
+    section.reservation{
+        .item{
+            height: 50%;
+        }
+    }
+}
+// -----ipad reservation-----
+ @media screen and (min-width:768px) {
+    section.reservation{
+        .item{
+            flex-direction: row;
+            .text_box{
+                width: 70%;
+                h2{
+                    font-size: 50px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+            .btn_box{
+                width: 30%;
+                // border: 1px solid red;
+                a{
+                    font-size: 18px;
+                }
+            }
+        }
+        
+    }
+ }
+
+//  -----footer手機------
+.footer{
+    background-color: $main1;
+    .wrap{
+        .item{
+            height: 180px;
+            color: $main2;
+            // border: 1px red solid;
+            padding: 30px 0;
+            position: relative;
+            h2{
+                font-size: 20px;
+                text-align: center;
+                font-weight: 600;
+                font-family: 'David Libre', serif;
+            }
+            p{
+                font-size: 14px;
+                line-height: 120%;
+            }
+            i{
+                font-size: 30px;
+            }
+            a{
+                color: $main2;
+            }
+            
+        }
+        .item:not(:last-child):after{
+            content: "";
+            height: 1px;
+            background-color: $main4;
+            width: 75%;
+            display: block;
+            // transform: translateX(-50%);
+            // left: 50%;
+            bottom: 0px;
+            position: absolute;
+        }
+        .item:not(:last-child):before{
+            content: "";
+            background-image: url('image/bean.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .item:nth-child(1){
+            .text_box{
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 60%;
+                left: 50%;
+                // border: 1px red solid;
+                h2{
+                    margin-bottom: 30px;
+                }
+                p{
+                    // margin-bottom: 20px;
+                    margin: 10px 0;
+                    text-align: center;
+                }
+            }
+        }
+        .item:nth-child(n + 2):not(:last-child){
+            .icon_box{
+                transform: translate(-50%);
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 70%;
+                // border: 1px red solid;
+                i{
+                    width: fit-content;
+                }
+                a{
+                    width: fit-content;
+                }
+            }
+        }
+        .item:nth-child(4){
+            .text_box{
+                // border: 1px red solid;
+                width: 70%;
+                margin: 0 auto;
+                .data{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    // margin-bottom: 20px;
+                    margin: 10px;
+                    .icon{
+                        width: 10%;
+                        // border: 1px red solid;
+                        position: relative;
+                        text-align: center;
+                      
+                    }
+                    .text{
+                        width: 85%;
+                        // border: 1px red solid;
+                    }
+                }
+                .data:nth-child(2){
+                    .icon{
+                        a{
+                            i{
+                                font-size: 26px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .item:nth-child(odd){
+            &:after{
+                left: 20%;
+            }
+            &:before{
+                left: 5%;
+                bottom: -10px;
+            }
+        }
+        .item:nth-child(2){
+            &:after{
+                right: 20%;
+            }
+            &:before{
+                right: 5%;
+                bottom: -10px;
+                
+            }
+        }
+    }
+    hr{
+        width: 90%;
+    }
+    .copyright{
+        color: $main2;
+        text-align: center;
+        padding: 20px 10px;
+        p{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            &:first-child{
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            &:last-child{
+                font-size: 12px;
+                line-height: 120%;
+            }
+        }
+    }
+}
+//footer 平板直以上
+ @media screen and (min-width:768px) {
+    .footer{
+        .wrap{
+            display: flex;
+            flex-wrap: wrap;
+
+            .item{
+                width: 25%;
+                h2{
+                    font-size: 16px;
+                    width: 100%;
+                }
+                i{
+                    font-size: 20px;
+                }
+                
+            }
+            .item:not(:last-child):after{
+                content: "";
+                // height: 120px;
+                height: 75%;
+                width: 1px;
+                bottom: 0px;
+                // right: 0;
+                position: absolute;
+            }
+            .item:not(:last-child):before{
+                content: "";
+                background-image: url('image/bean.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+            }
+            .item:nth-child(1){
+                .text_box{
+                    width: 100%;
+                }
+            }
+            .item:nth-child(n + 2):not(:last-child){
+                .icon_box{
+                    width: 50%;
+                }
+            }
+            .item:nth-child(4){
+                .text_box{
+                    width: 100%;
+                }
+            }
+            .item:nth-child(odd){
+                &:after{
+                    left: auto;
+                    right: 0;
+                    
+                }
+                &:before{
+                    left: auto;
+                    right: -5%;
+                    top: 10%;
+                    bottom: auto;
+                }
+            }
+            .item:nth-child(2){
+                &:after{
+                    right: 0%;
+                    top: 10%;
+                }
+                &:before{
+                    right: -5%;
+                    bottom: 0%;
+                    
+                }
+            }
+            #envelope{
+                font-size: 20px;
+            }
+            
+        }
+        
+    }
+ }
+ //footer 平板橫以上
+  @media screen and (min-width:1024px) {
+        .footer{
+            .wrap{
+                .item:nth-child(odd){
+                    &:before{
+                        right: -3%;
+                    }
+                }
+                .item:nth-child(2){
+                    &:before{
+                        right: -3%;
+                    }
+                }
+            }
+            #envelope{
+                font-size: 20px;
+            }
+            
+        }
+  }
