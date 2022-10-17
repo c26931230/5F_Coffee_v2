@@ -57,6 +57,7 @@
   background-color: #E77710;
   color: #fff;
   transform: scale(0.9);
+  border-color: #E77710;
 }
 .index_banner .wrap .item:nth-child(4) {
   grid-area: 2/2/4/3;
@@ -461,10 +462,10 @@
   transition: 1s;
 }
 .location #coffee_shop_bg {
-  background-image: url(../image/backimg.jpg);
+  background-image: url(../image/shop_bg.jpg);
 }
 .location #coffee_school_bg {
-  background-image: url(../image/bg1.jpg);
+  background-image: url(../image/school_bg.jpg);
 }
 .location h2 {
   margin-bottom: 0px;

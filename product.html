@@ -128,7 +128,32 @@
                             <label for="grinder">Coffee Grinder</label>
                         </div>
                     </div>
+                    <!-- price slider -->
                     <div class="price_bar">
+                        <h3>Price</h3>
+                        <div class="price-input">
+                            <div class="field">
+                                <input type="number" class="input-min" value="0">
+                            </div>
+                            <div class="field">
+                                <input type="number" class="input-max" value="2000">
+                            </div>
+                        </div>
+                        <div class="slider">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="range-input">
+                            <input type="range" class="range-min" min="0" max="2000" value="0" step="1">
+                            <input type="range" class="range-max" min="0" max="2000" value="2000" step="1">
+                        </div>
+                        <div class="price_detail">
+                            <span id="min_price">$0</span>
+                            <span id="max_price">$2000</span>
+                        </div>
+                        
+                    </div>
+                    <!--=====原本版===== -->
+                    <!-- <div class="price_bar">
                         <h3>Price</h3>
                         <div class="slider">
                             <div class="progress">
@@ -142,7 +167,7 @@
                             <span>$0</span>
                             <span>$1,000</span>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="filter_btn_box">
                         <button id="filter_confirm">Confirm</button>
                         <a id="filter_cancel">Cancel</a>
@@ -170,7 +195,7 @@
                     <div class="container">
                         <div class="row">
                             <!-- pd1 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -190,7 +215,7 @@
                                 </a>
                             </div>
                             <!-- pd2 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -210,7 +235,7 @@
                                 </a>
                             </div>
                              <!-- pd3 -->
-                             <div class="col-6 col-md-4">
+                             <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -230,7 +255,7 @@
                                 </a>
                             </div>
                             <!-- pd4 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -250,7 +275,7 @@
                                 </a>
                             </div>
                             <!-- pd5 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -270,7 +295,7 @@
                                 </a>
                             </div>
                             <!-- pd6 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -290,7 +315,7 @@
                                 </a>
                             </div>
                             <!-- pd7 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -311,7 +336,7 @@
                             </div>
                             
                             <!-- pd8 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -331,7 +356,7 @@
                                 </a>
                             </div>
                             <!-- pd9 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -351,7 +376,7 @@
                                 </a>
                             </div>
                             <!-- pd10 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -371,7 +396,7 @@
                                 </a>
                             </div>
                             <!-- pd11 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -391,7 +416,7 @@
                                 </a>
                             </div>
                             <!-- pd12 -->
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-lg-4 ">
                                 <a href="product_detail.html">
                                     <div class="item">
                                         <div class="img_box">
@@ -426,5 +451,6 @@
         </div>
 
     </section>
+    <script src="js/product.js"></script>
 </body>
 </html>

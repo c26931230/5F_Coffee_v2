@@ -80,6 +80,7 @@ $main7:#f5f4f2;
                 transition: .5s;
                 &:hover{
                     @include btn1_hover();
+                    border-color: $main3;
                 }
             }
         }
@@ -506,11 +507,11 @@ $main7:#f5f4f2;
         transition: 1s;
     }
     #coffee_shop_bg{
-        background-image: url(../image/backimg.jpg);
+        background-image: url(../image/shop_bg.jpg);
        
     }
     #coffee_school_bg{
-        background-image: url(../image/bg1.jpg);  
+        background-image: url(../image/school_bg.jpg);  
     }
     // &::after{
     //     background-image: url(../image/backimg.jpg);
