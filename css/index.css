@@ -51,6 +51,12 @@
   text-decoration: none;
   display: inline-block;
   font-family: "David Libre", serif;
+  transition: 0.5s;
+}
+.index_banner .wrap .item:nth-child(3) .btn:hover {
+  background-color: #E77710;
+  color: #fff;
+  transform: scale(0.9);
 }
 .index_banner .wrap .item:nth-child(4) {
   grid-area: 2/2/4/3;
@@ -438,6 +444,27 @@
   background: #13334E;
   color: #fff;
   overflow: hidden;
+  position: relative;
+  opacity: 1;
+}
+.location .bg {
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+.location #coffee_shop_bg {
+  background-image: url(../image/backimg.jpg);
+}
+.location #coffee_school_bg {
+  background-image: url(../image/bg1.jpg);
 }
 .location h2 {
   margin-bottom: 0px;
@@ -445,7 +472,6 @@
   font-weight: 600;
   text-align: right;
   padding: 30px;
-  font-family: "David Libre", serif;
 }
 .location .wrap {
   width: 350px;

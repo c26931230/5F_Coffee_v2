@@ -77,6 +77,10 @@ $main7:#f5f4f2;
                 text-decoration: none;
                 display: inline-block;
                 font-family: 'David Libre', serif;
+                transition: .5s;
+                &:hover{
+                    @include btn1_hover();
+                }
             }
         }
         .item:nth-child(4){
@@ -486,6 +490,41 @@ $main7:#f5f4f2;
     background: #13334E;
     color: #fff;
     overflow: hidden;
+    position: relative;
+    opacity: 1;
+    .bg{
+        background-position: center;
+        background-size: cover;
+        opacity: 0;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+    }
+    #coffee_shop_bg{
+        background-image: url(../image/backimg.jpg);
+       
+    }
+    #coffee_school_bg{
+        background-image: url(../image/bg1.jpg);  
+    }
+    // &::after{
+    //     background-image: url(../image/backimg.jpg);
+    //     background-position: center;
+    //     background-size: cover;
+    //     opacity: 0.6;
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
+    // }
     // border: 1px solid wheat;
     h2{
         margin-bottom: 0px;
@@ -494,7 +533,7 @@ $main7:#f5f4f2;
         text-align: right;
         // padding: 10px 30px 10px 0;
         padding: 30px;
-        font-family: 'David Libre', serif;
+        
     }
     .wrap {
         width: 350px;

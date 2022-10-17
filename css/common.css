@@ -245,7 +245,7 @@ body {
 }
 .footer .wrap .item:not(:last-child):before {
   content: "";
-  background-image: url("image/bean.png");
+  background-image: url("../../image/bean.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -369,7 +369,7 @@ body {
   }
   .footer .wrap .item:not(:last-child):before {
     content: "";
-    background-image: url("image/bean.png");
+    background-image: url("../image/bean.png");
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
