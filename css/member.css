@@ -1,0 +1,123 @@
+.member_banner {
+  min-height: calc(100vh - 65px);
+  background-color: #0A134D;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+}
+.member_banner .text_box {
+  width: 70%;
+}
+.member_banner .nav_box {
+  width: 100%;
+  display: inline-block;
+}
+.member_banner .nav_box span {
+  width: 100px;
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+.member_banner .nav_box #Indicitor {
+  border: none;
+  height: 3px;
+  background-color: #E77710;
+  width: 100px;
+  margin-left: 0;
+  margin-top: 8px;
+  transform: translateX(155px);
+  transition: transform 0.5s;
+}
+.member_banner .form_box {
+  width: 300px;
+  height: 400px;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.062745098) 0 0 20px 0px;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  padding: 50px 0;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 10%;
+}
+.member_banner .form_box form {
+  position: absolute;
+  top: 130px;
+  max-width: 300px;
+  padding: 0 20px;
+  transition: transform 0.5s;
+}
+.member_banner .form_box form input {
+  margin: 10px 0;
+  padding: 10px 6px;
+  border: 1px solid #333;
+  font-size: 20px;
+  width: 80%;
+  outline: none;
+}
+.member_banner .form_box form input:focus {
+  border: 1px solid #F1D00A;
+}
+.member_banner .form_box form a {
+  color: #333;
+  font-size: 12px;
+  transition: 0.5s;
+  display: inline-block;
+}
+.member_banner .form_box form a:hover {
+  color: #E77710;
+  transform: scale(0.9);
+}
+.member_banner .form_box form .btn {
+  background-color: transparent;
+  width: 50%;
+  border-radius: 30px;
+  padding: 10px 0;
+  cursor: pointer;
+  border: 1px solid #F1D00A;
+  font-size: 18px;
+  margin-top: 10px;
+  display: block;
+  margin: 20px auto 5px;
+  transition: 0.5s;
+}
+.member_banner .form_box form .btn:hover {
+  background-color: #E77710;
+  color: #fff;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+.member_banner .form_box #LoginForm {
+  left: -300px;
+}
+.member_banner .form_box #RegForm {
+  left: 0;
+}
+.member_banner .imgbox {
+  width: 30%;
+}
+.member_banner .imgbox img {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .member_banner .text_box {
+    width: 100%;
+  }
+  .member_banner .imgbox {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .member_banner .text_box {
+    width: 100%;
+  }
+  .member_banner .imgbox {
+    display: none;
+  }
+}/*# sourceMappingURL=member.css.map */

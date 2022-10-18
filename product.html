@@ -24,31 +24,6 @@
     <link rel="icon" href="logo.ico">
     <!-- jQuery -->
     <script src="js/jquery-3.6.1.min.js"></script>
-    <script>
-          $(document).ready(function(){
-            
-            $('#product_filter').click(function(){
-                $('#product_aside').slideDown(1000)
-                $('#product_filter').css({
-                    display:'none',
-                })
-                $('#match_box').css({
-                    display:'none',
-                })
-            })
-            $('#filter_cancel').click(
-                function(){
-                    $('#product_aside').slideUp(1000)
-                    $('#product_filter').css({
-                        display:'block',
-                    })
-                    $('#match_box').css({
-                    display:'block',
-                })
-                }
-            )
-       })
-    </script>
 </head>
 <body>
     <!-- header -->
@@ -152,22 +127,7 @@
                         </div>
                         
                     </div>
-                    <!--=====原本版===== -->
-                    <!-- <div class="price_bar">
-                        <h3>Price</h3>
-                        <div class="slider">
-                            <div class="progress">
-                            </div>
-                        </div>
-                        <div class="range_input">
-                            <input type="range" min="0" max="1000" value="0" class="min">
-                            <input type="range" min="0" max="1000" value="1000" class="max">
-                        </div>
-                        <div class="price_text">
-                            <span>$0</span>
-                            <span>$1,000</span>
-                        </div>
-                    </div> -->
+                    
                     <div class="filter_btn_box">
                         <button id="filter_confirm">Confirm</button>
                         <a id="filter_cancel">Cancel</a>

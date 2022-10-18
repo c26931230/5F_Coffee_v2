@@ -1,3 +1,4 @@
+// -----price slider bar-----
 const rangeInput = document.querySelectorAll(".range-input input");
 const priceInput = document.querySelectorAll(".price-input input");
 progress = document.querySelector(".slider .progress");
@@ -51,3 +52,57 @@ rangeInput.forEach(input=>{
     })
     
 })
+
+// filter
+$(document).ready(function(){
+            
+    $('#product_filter').click(function(){
+        $('#product_aside').slideDown(1000)
+        $('#product_filter').css({
+            display:'none',
+        })
+        $('#match_box').css({
+            display:'none',
+        })
+    })
+    $('#filter_cancel').click(
+        function(){
+            $('#product_aside').slideUp(1000)
+            $('#product_filter').css({
+                display:'block',
+            })
+            $('#match_box').css({
+            display:'block',
+        })
+        }
+    )
+})
+
+
+// product.detail
+
+// -----換愛心-----
+var solid_heart = document.getElementById("solid_heart");
+var regular_heart = document.getElementById("regular_heart");
+function changeToSolidHeart(){
+    solid_heart.style.display = "inline-block";
+    regular_heart.style.display = "none";
+}
+function changeToRegHeartColor(){
+    solid_heart.style.display = "none";
+    regular_heart.style.display = "inline-block";
+}
+// -----小圖換大圖-----
+
+function showLarge(e){
+    let small = e.target;
+    document.getElementById("mainImg").src = small.src;
+}
+function init(){
+    let imgs = document.querySelectorAll("#minor img");
+    for(let i=0; i<imgs.length; i++){
+        imgs[i].onclick = showLarge;
+    }
+}
+window.addEventListener("load",init,false);
+   
