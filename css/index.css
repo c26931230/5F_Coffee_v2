@@ -700,7 +700,7 @@ section.discount {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  -webkit-background-attachment: fixed;
+  -webkit-background-attachment: scroll;
   position: relative;
 }
 section.discount .item {
