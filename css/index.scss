@@ -26,8 +26,30 @@ $main7:#f5f4f2;
     align-items: center;
     justify-content: center;
 }
+// banner 動畫
+.banner_slidein{
+    transform: translateX(100%) scale(0.8);
+    transition: transform 2.5s, opacity 5s;
+    opacity: 0;
+}
+.banner_slidein.active{
+    transform: translateX(0%) scale(1);
+    opacity: 1;
+}
+.banner_fadein{
+    transform: translateX(-100%) scale(0);
+    transition: transform 2.5s, opacity 5s;     
+    opacity: 0;
+}
+.banner_fadein.active{
+    transform: translateX(0%) scale(1);
+    transition: 2.5s;
+    opacity: 1;
+}
+// -----banner 手機-----
 .index_banner{
     background-color: $main1;
+    overflow: hidden;
     .wrap{
         display: grid;
         grid-template-columns: 60% 40%;
@@ -211,6 +233,8 @@ $main7:#f5f4f2;
             font-family: 'David Libre', serif;
             padding: 30px;
             line-height: 120%;
+            // border: 1px solid red;
+            // text-align: left;
         }
     }
     .img_box{
@@ -373,7 +397,7 @@ $main7:#f5f4f2;
 }
 
 // ----滑入動畫 slogan-----
-.slidein{
+.slide_in{
     opacity: 0;
     transition: 2.5s;
 }
@@ -384,7 +408,7 @@ $main7:#f5f4f2;
 
 
 
-.slidein.active{
+.slide_in.active{
     opacity: 1;
     transform: translateX(0%) scale(1);
 }
@@ -404,6 +428,25 @@ $main7:#f5f4f2;
     min-width: 100%;
     position: relative;
     margin-bottom: 100px;
+    .title_box{
+        opacity: 0;
+        transform: scale(0.8);
+        transition: 1s;
+        p{
+            font-size: 14px;
+            text-align: center;
+            // border: 1px solid red;
+            padding: 0 5px;
+            color: #33333350;
+            font-family: 'David Libre', serif;
+        }
+    }
+    .title_box.active{
+        opacity: 1;
+        transform: scale(1);
+        transition: 1s;
+    }
+    
     h2{
         color: $main5;
         text-align: center;
@@ -413,13 +456,6 @@ $main7:#f5f4f2;
         font-weight: 600;
         font-family: 'David Libre', serif;
         margin-bottom: 10px;
-    }
-    p{
-        font-size: 14px;
-        text-align: center;
-        padding: 0 5px;
-        color: #33333350;
-        font-family: 'David Libre', serif;
     }
     .btn_box{
         text-align: center;
@@ -493,6 +529,31 @@ $main7:#f5f4f2;
     overflow: hidden;
     position: relative;
     opacity: 1;
+    .title_box{
+        // opacity: 0;
+        // transform: scale(0.8);
+        // transition: 2.5s;
+        width: 100%;
+        // border: 1px solid red;
+        // text-align: right;
+        display: flex;
+        justify-content: end;
+        .item{
+            transform: scale(0.8);
+            transition: 1s;
+            // border: 1px solid red;
+            width: fit-content;
+            opacity: 0;
+
+        }
+        .item.active{
+            opacity: 1;
+            transform: scale(1);
+            transition: 1s;
+        }
+        
+    }
+    
     .bg{
         background-position: center;
         background-size: cover;
@@ -513,20 +574,6 @@ $main7:#f5f4f2;
     #coffee_school_bg{
         background-image: url(../image/school_bg.jpg);  
     }
-    // &::after{
-    //     background-image: url(../image/backimg.jpg);
-    //     background-position: center;
-    //     background-size: cover;
-    //     opacity: 0.6;
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     display: block;
-    //     width: 100%;
-    //     height: 100%;
-    // }
-    // border: 1px solid wheat;
     h2{
         margin-bottom: 0px;
         font-size: 40px;
@@ -557,12 +604,14 @@ $main7:#f5f4f2;
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: space-around;
-        transition: .5s;
+        transition: 2.5s;
         background-color: $main6;
+        opacity: 0;
+        transform: scale(0.8);
         &:hover{
             background-color: $main3;
-            transform: scale(0.9);
-            border: $main3 1px solid;
+            transform: scale(0.8)!important;
+            border: $main3 2px solid;
         }
         h3{
             font-size: 20px;
@@ -576,6 +625,10 @@ $main7:#f5f4f2;
         i{
             font-size: 30px;
         }
+    }
+    .school.active, .shop.active{
+        transform: scale(1);
+        opacity: 1;
     }
     .school{
        left: 0%;
@@ -595,17 +648,30 @@ $main7:#f5f4f2;
         top: 290px;
         // right: 0px;
         left: 16px;
-        transform: rotate(60deg);
+        transform: rotate(60deg) translateX(-100%);
         transform-origin: right top;
         width: 135px;
+        transition: 2.5s;
+        opacity: 0;
+        // transform: translateX(100px);
+    }
+    .line1.active{
+        transform: rotate(60deg) translateX(0%);
+        opacity: 1;
     }
     .line2 {
         top: 302px;
         right: 50px;
         // left: 534px;
-        transform: rotate(56deg);
+        transform: rotate(56deg) translateX(100%);
+        opacity: 0;
         transform-origin: left top;
-        width: 135px
+        width: 135px;
+        transition: 2.5s;
+    }
+    .line2.active{
+        transform: rotate(56deg) translateX(0%);
+        opacity: 1;
     }
 }
 
@@ -669,7 +735,7 @@ $main7:#f5f4f2;
             top: 290px;
             // right: 0px;
             left: -23px;
-            transform: rotate(70deg);
+            transform: rotate(70deg) translateX(-100%);
             transform-origin: right top;
             width: 135px;
         }
@@ -695,30 +761,41 @@ $main7:#f5f4f2;
             height: 520px;
             // border: 1px solid aquamarine;
             margin: auto;
-            background: url(../image/map.png) 50% 10px/400px no-repeat
+            background: url(../image/map.png) 50% 10px/400px no-repeat;
             /*   left距離 / top距離 /高度 */
+            .school{
+                left: 5%;
+            }
+            .shop{
+                right: 5%;
+            }
+            .line1 {
+                top: 290px;
+                // right: 0px;
+                left: 130px;
+                transform: rotate(45deg) translateX(-70%);
+                transform-origin: right top;
+                width: 235px;
+                opacity: 0;
+            }
+            .line1.active{
+                transform: rotate(45deg) translateX(0%);
+                opacity: 1;
+            }
+            .line2 {
+                top: 305px;
+                right: 180px;
+                transform: rotate(20deg) translateX(70%);
+                transform-origin: left top;
+                width: 235px;
+                opacity: 0;
+            }
+            .line2.active{
+                transform: rotate(20deg) translateX(0%);
+                opacity: 1;
+            }
         }
-        .school{
-            left: 5%;
-        }
-        .shop{
-            right: 5%;
-        }
-        .line1 {
-            top: 290px;
-            // right: 0px;
-            left: 130px;
-            transform: rotate(45deg);
-            transform-origin: right top;
-            width: 235px;
-        }
-        .line2 {
-            top: 305px;
-            right: 180px;
-            transform: rotate(20deg);
-            transform-origin: left top;
-            width: 235px;
-        }
+        
     }
    
 }
@@ -736,48 +813,77 @@ $main7:#f5f4f2;
             height: 520px;
             // border: 1px solid aquamarine;
             margin: auto;
-            background: url(../image/map.png) 50% 10px/400px no-repeat
+            background: url(../image/map.png) 50% 10px/400px no-repeat;
             /*                    left距離 / top距離 /高度 */
-        }
-        .school, .shop {
-            width: 200px;
-            height: 200px;
-            h3{
-                font-size: 22px;
+            .school, .shop {
+                width: 200px;
+                height: 200px;
+                h3{
+                    font-size: 22px;
+                }
+                h4{
+                    font-size: 12px;
+                    width: 60%;
+                }
             }
-            h4{
-                font-size: 12px;
-                width: 60%;
+            .school{
+                left: 10%;
+                opacity: 0;
+                transition: 2.5s;
+                transform: scale(0.8);
+             }
+            .school.active{
+                opacity: 1;
+                transform: scale(1);
             }
+            .shop{
+                 right: 10%;
+                 bottom: 5%;
+                 opacity: 0;
+                 transition: 2.5s;
+                 transform: scale(0.8);
+            }
+            .shop.active{
+                opacity: 1;
+                transform: scale(1);
+            }
+             .line {
+                 position: absolute;
+                 height: 3px;
+                 background: linear-gradient(to right, #F1D00A 6px, transparent 3px) 0 0/12px 1px;
+             }
+             
+             .line1 {
+                top: 290px;
+                // right: 0px;
+                left: 220px;
+                transform: rotate(30deg) translateX(-70%);
+                opacity: 0;
+                transform-origin: right top;
+                width: 300px;
+                // transition: 2.5s;
+                transition: transform 2.5s 0s, opacity 2.5s 1s;
+             }
+             .line1.active{
+                transform: rotate(30deg) translateX(0%);
+                opacity: 1;
+             }
+             .line2 {
+                top: 305px;
+                right: 210px;
+                transform: rotate(15deg) translateX(70%);
+                transform-origin: left top;
+                width: 355px;
+                opacity: 0;
+                transition: transform 2.5s 0s, opacity 2.5s 1s;
+             }
+             .line2.active{
+                transform: rotate(15deg) translateX(0%);
+                opacity: 1;
+             }
         }
-        .school{
-            left: 10%;
-         }
-         .shop{
-             right: 10%;
-             bottom: 5%;
-         }
-         .line {
-             position: absolute;
-             height: 3px;
-             background: linear-gradient(to right, #F1D00A 6px, transparent 3px) 0 0/12px 1px;
-         }
-         
-         .line1 {
-            top: 290px;
-            // right: 0px;
-            left: 220px;
-            transform: rotate(30deg);
-            transform-origin: right top;
-            width: 300px;
-         }
-         .line2 {
-            top: 305px;
-            right: 210px;
-            transform: rotate(15deg);
-            transform-origin: left top;
-            width: 355px;
-         }
+        
+        
     }
     
 }
@@ -806,11 +912,12 @@ section.discount{
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
-    left: 50%;
+    left: -100%;
     padding: 50px 10px;
     width: 100%;
     height: 40%;
     background-color: #13334E90;
+    transition: 2.5s;
     .text_box{
         width: 100%;
         text-align: center;
@@ -829,6 +936,7 @@ section.discount{
             // opacity: .5;
         }
     }
+    
     .btn_box{
         width: fit-content;
         // border: 1px solid red;
@@ -850,6 +958,10 @@ section.discount{
         }
     }
    }
+//    .item.active{
+//     left: 50%;
+//     opacity: 1;
+// }
 }
 
 // -----discount小手機-----

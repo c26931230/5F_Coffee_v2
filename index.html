@@ -8,7 +8,7 @@
    
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="grid_system.css">
+    <link rel="stylesheet" href="css/grid_system.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/common.css">
 
@@ -27,6 +27,7 @@
     <link rel="icon" href="logo.ico">
     <!-- jquery -->
     <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -62,16 +63,16 @@
     <!-- banner -->
     <section class="index_banner">
         <div class="wrap">
-            <div class="item">
+            <div class="item banner_fadein">
                 <h1 id="h1">Welcome to 5F Coffee</h1>
             </div>
-            <div class="item">
+            <div class="item banner_fadein">
                 <p>If you love coffee, this is where you belong.We don't make your coffee. We make your day.We're all just looking for the same thing.</p>
             </div>
-            <div class="item">
+            <div class="item banner_fadein">
                 <a href="#" class="btn">Visit Us</a>
             </div>
-            <div class="item">
+            <div class="item banner_slidein">
                 <img src="image/portafilter.png" alt="portafilter">
             </div>
         </div>
@@ -85,7 +86,7 @@
             </p>
         </div>
         <!-- Carousel -->
-        <div class="img_box slidein ltr" id="slogan_img">
+        <div class="img_box slide_in ltr" id="slogan_img">
             <input type="radio" class="carousel_btn" name="slider" id="carousel_btn1" checked>
             <input type="radio" class="carousel_btn" name="slider" id="carousel_btn2">
             <input type="radio" class="carousel_btn" name="slider" id="carousel_btn3">
@@ -104,8 +105,10 @@
     </section>
     <!-- new arrivals -->
     <section class="new_arrivals">
-        <h2 class="h2">New Arrivals</h2>
-        <p>Check out all of these amazing new items in 5F Coffee right now.</p>
+        <div class="title_box">
+            <h2 class="h2">New Arrivals</h2>
+            <p>Check out all of these amazing new items in 5F Coffee right now.</p>
+        </div>
         <div class="sliders">
          <div class="wrapper">
            <div class="item">
@@ -182,7 +185,11 @@
     <section class="location">
         <div class="bg" id="coffee_shop_bg"></div>
         <div class="bg" id="coffee_school_bg"></div>
-        <h2>Location</h2>
+        <div class="title_box">
+            <div class="item">
+                <h2>Location</h2>
+            </div>
+        </div>
         <div class="wrap">
           <div class="line line1"></div>
           <div class="line line2"></div> 

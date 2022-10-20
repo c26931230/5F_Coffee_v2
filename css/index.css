@@ -1,6 +1,30 @@
 @charset "UTF-8";
+.banner_slidein {
+  transform: translateX(100%) scale(0.8);
+  transition: transform 2.5s, opacity 5s;
+  opacity: 0;
+}
+
+.banner_slidein.active {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+}
+
+.banner_fadein {
+  transform: translateX(-100%) scale(0);
+  transition: transform 2.5s, opacity 5s;
+  opacity: 0;
+}
+
+.banner_fadein.active {
+  transform: translateX(0%) scale(1);
+  transition: 2.5s;
+  opacity: 1;
+}
+
 .index_banner {
   background-color: #0A134D;
+  overflow: hidden;
 }
 .index_banner .wrap {
   display: grid;
@@ -297,7 +321,7 @@
     transform: translateX(77%) translateY(-20%) scale(0.8);
   }
 }
-.slidein {
+.slide_in {
   opacity: 0;
   transition: 2.5s;
 }
@@ -306,7 +330,7 @@
   transform: translateX(-30%) scale(0.8);
 }
 
-.slidein.active {
+.slide_in.active {
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
@@ -327,6 +351,23 @@
   position: relative;
   margin-bottom: 100px;
 }
+.new_arrivals .title_box {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 1s;
+}
+.new_arrivals .title_box p {
+  font-size: 14px;
+  text-align: center;
+  padding: 0 5px;
+  color: rgba(51, 51, 51, 0.3137254902);
+  font-family: "David Libre", serif;
+}
+.new_arrivals .title_box.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 1s;
+}
 .new_arrivals h2 {
   color: #607EAA;
   text-align: center;
@@ -336,13 +377,6 @@
   font-weight: 600;
   font-family: "David Libre", serif;
   margin-bottom: 10px;
-}
-.new_arrivals p {
-  font-size: 14px;
-  text-align: center;
-  padding: 0 5px;
-  color: rgba(51, 51, 51, 0.3137254902);
-  font-family: "David Libre", serif;
 }
 .new_arrivals .btn_box {
   text-align: center;
@@ -448,6 +482,24 @@
   position: relative;
   opacity: 1;
 }
+.location .title_box {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.location .title_box .item {
+  transform: scale(0.8);
+  transition: 1s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  opacity: 0;
+}
+.location .title_box .item.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 1s;
+}
 .location .bg {
   background-position: center;
   background-size: cover;
@@ -495,13 +547,15 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
-  transition: 0.5s;
+  transition: 2.5s;
   background-color: #13334E;
+  opacity: 0;
+  transform: scale(0.8);
 }
 .location .school:hover, .location .shop:hover {
   background-color: #E77710;
-  transform: scale(0.9);
-  border: #E77710 1px solid;
+  transform: scale(0.8) !important;
+  border: #E77710 2px solid;
 }
 .location .school h3, .location .shop h3 {
   font-size: 20px;
@@ -514,6 +568,10 @@
 }
 .location .school i, .location .shop i {
   font-size: 30px;
+}
+.location .school.active, .location .shop.active {
+  transform: scale(1);
+  opacity: 1;
 }
 .location .school {
   left: 0%;
@@ -531,16 +589,28 @@
 .location .line1 {
   top: 290px;
   left: 16px;
-  transform: rotate(60deg);
+  transform: rotate(60deg) translateX(-100%);
   transform-origin: right top;
   width: 135px;
+  transition: 2.5s;
+  opacity: 0;
+}
+.location .line1.active {
+  transform: rotate(60deg) translateX(0%);
+  opacity: 1;
 }
 .location .line2 {
   top: 302px;
   right: 50px;
-  transform: rotate(56deg);
+  transform: rotate(56deg) translateX(100%);
+  opacity: 0;
   transform-origin: left top;
   width: 135px;
+  transition: 2.5s;
+}
+.location .line2.active {
+  transform: rotate(56deg) translateX(0%);
+  opacity: 1;
 }
 
 @media screen and (max-width: 350px) {
@@ -598,7 +668,7 @@
   .location .line1 {
     top: 290px;
     left: -23px;
-    transform: rotate(70deg);
+    transform: rotate(70deg) translateX(-100%);
     transform-origin: right top;
     width: 135px;
   }
@@ -619,26 +689,37 @@
     height: 520px;
     margin: auto;
     background: url(../image/map.png) 50% 10px/400px no-repeat;
+    /*   left距離 / top距離 /高度 */
   }
-  .location .school {
+  .location .wrap .school {
     left: 5%;
   }
-  .location .shop {
+  .location .wrap .shop {
     right: 5%;
   }
-  .location .line1 {
+  .location .wrap .line1 {
     top: 290px;
     left: 130px;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateX(-70%);
     transform-origin: right top;
     width: 235px;
+    opacity: 0;
   }
-  .location .line2 {
+  .location .wrap .line1.active {
+    transform: rotate(45deg) translateX(0%);
+    opacity: 1;
+  }
+  .location .wrap .line2 {
     top: 305px;
     right: 180px;
-    transform: rotate(20deg);
+    transform: rotate(20deg) translateX(70%);
     transform-origin: left top;
     width: 235px;
+    opacity: 0;
+  }
+  .location .wrap .line2.active {
+    transform: rotate(20deg) translateX(0%);
+    opacity: 1;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -653,43 +734,70 @@
     height: 520px;
     margin: auto;
     background: url(../image/map.png) 50% 10px/400px no-repeat;
+    /*                    left距離 / top距離 /高度 */
   }
-  .location .school, .location .shop {
+  .location .wrap .school, .location .wrap .shop {
     width: 200px;
     height: 200px;
   }
-  .location .school h3, .location .shop h3 {
+  .location .wrap .school h3, .location .wrap .shop h3 {
     font-size: 22px;
   }
-  .location .school h4, .location .shop h4 {
+  .location .wrap .school h4, .location .wrap .shop h4 {
     font-size: 12px;
     width: 60%;
   }
-  .location .school {
+  .location .wrap .school {
     left: 10%;
+    opacity: 0;
+    transition: 2.5s;
+    transform: scale(0.8);
   }
-  .location .shop {
+  .location .wrap .school.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .location .wrap .shop {
     right: 10%;
     bottom: 5%;
+    opacity: 0;
+    transition: 2.5s;
+    transform: scale(0.8);
   }
-  .location .line {
+  .location .wrap .shop.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .location .wrap .line {
     position: absolute;
     height: 3px;
     background: linear-gradient(to right, #F1D00A 6px, transparent 3px) 0 0/12px 1px;
   }
-  .location .line1 {
+  .location .wrap .line1 {
     top: 290px;
     left: 220px;
-    transform: rotate(30deg);
+    transform: rotate(30deg) translateX(-70%);
+    opacity: 0;
     transform-origin: right top;
     width: 300px;
+    transition: transform 2.5s 0s, opacity 2.5s 1s;
   }
-  .location .line2 {
+  .location .wrap .line1.active {
+    transform: rotate(30deg) translateX(0%);
+    opacity: 1;
+  }
+  .location .wrap .line2 {
     top: 305px;
     right: 210px;
-    transform: rotate(15deg);
+    transform: rotate(15deg) translateX(70%);
     transform-origin: left top;
     width: 355px;
+    opacity: 0;
+    transition: transform 2.5s 0s, opacity 2.5s 1s;
+  }
+  .location .wrap .line2.active {
+    transform: rotate(15deg) translateX(0%);
+    opacity: 1;
   }
 }
 section.discount {
@@ -711,11 +819,12 @@ section.discount .item {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
-  left: 50%;
+  left: -100%;
   padding: 50px 10px;
   width: 100%;
   height: 40%;
   background-color: rgba(19, 51, 78, 0.5647058824);
+  transition: 2.5s;
 }
 section.discount .item .text_box {
   width: 100%;
