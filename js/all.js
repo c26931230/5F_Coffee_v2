@@ -104,15 +104,15 @@ $(document).ready(function(){
     function discount(){
         let outerHeight = $('.discount').outerHeight();
         let offsetTop = $('.discount').offset().top;
-        if(scrollY + innerHeight - outerHeight > offsetTop){
-            $('.discount > .item').animate({
+        if(scrollY + innerHeight - outerHeight < offsetTop){
+            $('.discount > .item').stop(true).animate({
                 left:'50%',
-            },100,'easeOutQuint')
+            },400,'easeOutQuint')
         }
         else{
             $('.discount > .item').animate({
                 left:"-100%",
-            },2000,'easeOutQuint')
+            },400,'easeOutQuint')
         }
     }
     // -----slogan 輪播圖-----
@@ -182,23 +182,23 @@ function carousel(i){
 // index.html location 動畫
 
 
-// --menu.html 換介紹---
-$(document).ready(function(){
-  $('#switch_menu').click(function(){
-    if($('.front').hasClass('rotate')){
-        $('.front').removeClass('rotate')
-    }else{$('.front').addClass('rotate')}
-  })
-  $('.front').mouseenter(function(){
-        if($(this).hasClass('rotate')){
-            $(this).removeClass('rotate')
-        }else{$(this).addClass('rotate')}
-    }
-  ).mouseleave(function(){
-    if($(this).hasClass('rotate')){
-        $(this).removeClass('rotate')
-    }else{$(this).addClass('rotate')}
-  })
+// // --menu.html 換介紹---
+// $(document).ready(function(){
+//   $('#switch_menu').click(function(){
+//     if($('.front').hasClass('rotate')){
+//         $('.front').removeClass('rotate')
+//     }else{$('.front').addClass('rotate')}
+//   })
+//   $('.front').mouseenter(function(){
+//         if($(this).hasClass('rotate')){
+//             $(this).removeClass('rotate')
+//         }else{$(this).addClass('rotate')}
+//     }
+//   ).mouseleave(function(){
+//     if($(this).hasClass('rotate')){
+//         $(this).removeClass('rotate')
+//     }else{$(this).addClass('rotate')}
+//   })
     
-})
+// })
 

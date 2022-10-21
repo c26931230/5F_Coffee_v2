@@ -267,10 +267,18 @@ $main7:#f5f4f2;
     border-top-right-radius: 15px 225px;
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: -100%;
     z-index: 10;
     font-family: 'David Libre', serif;
     font-weight: 600;
+    // display: none;
+    opacity: 0;
+    transition: 1s;
+  }
+  #switch_menu.active{
+    // display: block;
+    opacity: 1;
+    right: 20px;
   }
   
   #switch_menu:hover {
