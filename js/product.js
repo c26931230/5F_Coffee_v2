@@ -79,7 +79,7 @@ $(document).ready(function(){
 })
 
 
-// product.detail
+// product_detail.html
 
 // -----換愛心-----
 var solid_heart = document.getElementById("solid_heart");
@@ -104,5 +104,24 @@ function init(){
         imgs[i].onclick = showLarge;
     }
 }
+// -----產品顏色----
+// function changeColor(){
+//     let colorImgs =document.getElementsByClassName('color_img');
+//     for(let i=0; i<colorImgs.length; i++){
+//         colorImgs[i].onclick = function(){
+//             this.style.borderStyle = "2px solid #333";
+//         }
+//     }
+    
+// }
+
+$('.color_img').click(function(){
+    $(this).css({
+        border: '2px solid #333',
+   })
+   $('.color_img').not(this).css({
+        border: '1px solid #333' 
+   })
+})
 window.addEventListener("load",init,false);
    

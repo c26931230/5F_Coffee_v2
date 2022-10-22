@@ -25,6 +25,8 @@
 .index_banner {
   background-color: #0A134D;
   overflow: hidden;
+  opacity: 0;
+  transition: 2.5s;
 }
 .index_banner .wrap {
   display: grid;
@@ -395,19 +397,19 @@
 
 @-webkit-keyframes scroll {
   from {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 }
 @-webkit-keyframes scroll2 {
@@ -415,7 +417,7 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
 @keyframes scroll2 {
@@ -423,7 +425,7 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
 .sliders {
@@ -862,6 +864,10 @@ section.discount .item .btn_box a:hover {
   color: #fff;
   transform: scale(0.9);
   border: 1px solid #E77710;
+}
+section.discount .item.active {
+  left: 50%;
+  opacity: 1;
 }
 
 @media screen and (max-width: 400px) {

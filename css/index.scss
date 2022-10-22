@@ -50,6 +50,8 @@ $main7:#f5f4f2;
 .index_banner{
     background-color: $main1;
     overflow: hidden;
+    opacity: 0;
+    transition: 2.5s;
     .wrap{
         display: grid;
         grid-template-columns: 60% 40%;
@@ -121,6 +123,9 @@ $main7:#f5f4f2;
         }
     }
 }
+// .index_banner{
+//     opacity: 1;
+// }
 // -----ipad 直index banner-----
 @media screen and (min-width:768px) {
     .index_banner{
@@ -466,13 +471,19 @@ $main7:#f5f4f2;
     }
 }
 @keyframes scroll{
-    from{transform: translateX(100%)}
-    to{transform: translateX(-100%)}
+    from{transform: translateX(-100%)}
+    to{transform: translateX(0%)}
+    // 原本
+    // from{transform: translateX(100%)}
+    // to{transform: translateX(-100%)}
 }
   
 @keyframes scroll2{
     from{transform: translateX(0%)}
-    to{transform: translateX(-200%)}
+    to{transform: translateX(-100%)}
+    //原本
+    // from{transform: translateX(0%)}
+    // to{transform: translateX(-200%)}
 }
 .sliders{
     display: flex;
@@ -958,10 +969,10 @@ section.discount{
         }
     }
    }
-//    .item.active{
-//     left: 50%;
-//     opacity: 1;
-// }
+   .item.active{
+    left: 50%;
+    opacity: 1;
+}
 }
 
 // -----discount小手機-----

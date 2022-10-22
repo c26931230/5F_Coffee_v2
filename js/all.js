@@ -2,11 +2,15 @@
 window.onload = function(){
     let banner_slidein = document.getElementsByClassName("banner_slidein");
     let banner_fadein = document.getElementsByClassName("banner_fadein");
+    let banner_bg = document.getElementsByClassName("index_banner");
     for(let i=0; i < banner_slidein.length; i++){
         banner_slidein[i].classList.add("active");
     }
     for(let i=0; i < banner_fadein.length; i++){
         banner_fadein[i].classList.add("active");
+    }
+    for(let i=0; i < banner_bg.length; i++){
+        banner_bg[i].style.opacity=1;
     }
 }
 // -----index.html slogan動畫 jQuery-----
@@ -90,31 +94,31 @@ $(document).ready(function(){
     }
     // ----discount動畫-----
     // ---一般效果---
-    // function discount(){
-    //     let outerHeight = $('.discount').outerHeight();
-    //     let offsetTop = $('.discount').offset().top;
-    //     if(scrollY + innerHeight - outerHeight / 3 > offsetTop){
-    //         $('.discount > .item').addClass('active')
-    //     }
-    //     else{
-    //         $('.discount > .item').removeClass('active')
-    //     }
-    // }
-    // ---彈跳效果----
     function discount(){
         let outerHeight = $('.discount').outerHeight();
         let offsetTop = $('.discount').offset().top;
-        if(scrollY + innerHeight - outerHeight < offsetTop){
-            $('.discount > .item').stop(true).animate({
-                left:'50%',
-            },400,'easeOutQuint')
+        if(scrollY + innerHeight - outerHeight / 3 > offsetTop){
+            $('.discount > .item').addClass('active')
         }
         else{
-            $('.discount > .item').animate({
-                left:"-100%",
-            },400,'easeOutQuint')
+            $('.discount > .item').removeClass('active')
         }
     }
+    // ---彈跳效果----
+    // function discount(){
+    //     let outerHeight = $('.discount').outerHeight();
+    //     let offsetTop = $('.discount').offset().top;
+    //     if(scrollY + innerHeight - outerHeight < offsetTop){
+    //         $('.discount > .item').stop(true).animate({
+    //             left:'50%',
+    //         },400,'easeOutQuint')
+    //     }
+    //     else{
+    //         $('.discount > .item').animate({
+    //             left:"-100%",
+    //         },400,'easeOutQuint')
+    //     }
+    // }
     // -----slogan 輪播圖-----
     let carouselBtn = document.querySelectorAll("input.carousel_btn");
     function carousel(i){

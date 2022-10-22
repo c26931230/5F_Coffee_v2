@@ -116,7 +116,7 @@
   cursor: pointer;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 2px 2px 20px #ddd;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
 }
 .coffee_menu_box .item .front, .pastry_menu_box .item .front, .tea_menu_box .item .front {
@@ -187,6 +187,10 @@
   left: 50%;
   top: 30%;
   transform: scaleX(-1);
+}
+
+.tea_menu_box {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 767px) {
