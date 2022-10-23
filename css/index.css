@@ -434,6 +434,14 @@
     transform: translateX(-200%);
   }
 }
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(-144%);
+  }
+}
 @-webkit-keyframes scrolling {
   0% {
     transform: translateX(0);

@@ -491,6 +491,13 @@ $main7:#f5f4f2;
     0% { transform: translateX(0); }
     100% { transform: translatex(-144%); }
   }
+  @-webkit-keyframes scrolling { //n
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translatex(-144%); transform: translatex(-144%); }
+  } @keyframes scrolling { //n
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translatex(-144%); transform: translatex(-144%); }
+  }
 .sliders{
     display: flex;
     width: 100%;
