@@ -1,9 +1,18 @@
 .main_course {
   background-color: #f5f4f2;
-  padding: 50px 0;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+.main_course h3 {
+  color: #607EAA;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 35px 0;
 }
 .main_course .container {
-  width: 80%;
+  width: 100%;
 }
 .main_course .container .row .item {
   position: relative;
@@ -17,7 +26,7 @@
 }
 .main_course .container .row .item .sale {
   position: absolute;
-  top: 20px;
+  top: 14px;
   right: -30px;
   transform: rotate(45deg);
   padding: 10px 25px;
@@ -39,13 +48,13 @@
 .main_course .container .row .item .txt_box {
   padding: 5px 10px;
 }
-.main_course .container .row .item .txt_box h3 {
+.main_course .container .row .item .txt_box h4 {
   font-size: 20px;
   color: #607EAA;
   font-weight: 600;
   margin-bottom: 5px;
 }
-.main_course .container .row .item .txt_box h3 + p {
+.main_course .container .row .item .txt_box h4 + p {
   color: rgba(0, 0, 0, 0.3137254902);
   font-size: 16px;
   margin-bottom: 5px;
@@ -86,5 +95,10 @@
   }
   .main_course .container .row .item {
     margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main_course .container .row .col-6 {
+    width: 100%;
   }
 }/*# sourceMappingURL=course.css.map */

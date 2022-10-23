@@ -6,6 +6,10 @@
   transition: 2s;
   overflow: hidden;
 }
+.faq_banner .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .faq_banner h2 {
   text-align: center;
   color: #F1D00A;
@@ -109,6 +113,7 @@
   width: 80%;
   padding-top: 50px;
   margin: 0 auto;
+  max-width: 1200px;
 }
 .faq .wrap .item {
   background-color: #fff;

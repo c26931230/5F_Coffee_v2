@@ -9,7 +9,7 @@ $main7:#f5f4f2;
 *{
     box-sizing: border-box;  
 }
-h1, h2, h3, h4{
+h1, h2, h3, h4,button,label,p{
     font-family: "David Libre", serif;
 }
 a{
@@ -45,6 +45,7 @@ body{
     .header{
         .wrap{
             max-width: 1200px;
+            margin: 0 auto;
         }
     }
 }
@@ -299,6 +300,7 @@ body{
                 }
             }
         }
+        
         .item:nth-child(n + 2):not(:last-child){
             .icon_box{
                 transform: translate(-50%);
@@ -319,6 +321,15 @@ body{
                 }
             }
         }
+        .item:nth-child(3){
+            .icon_box{
+                a{
+                    &:hover{
+                        color: $main4;
+                    }
+                }
+            }
+        }
         .item:nth-child(4){
             .text_box{
                 // border: 1px red solid;
@@ -336,11 +347,23 @@ body{
                         // border: 1px red solid;
                         position: relative;
                         text-align: center;
+                        a{
+                            transition: .5;
+                            &:hover{
+                                color: $main4;
+                            }
+                        }
                       
                     }
                     .text{
                         width: 85%;
                         // border: 1px red solid;
+                        a{
+                            transition: 1s;
+                            &:hover{
+                                color: $main4;
+                            }
+                        }
                     }
                 }
                 .data:nth-child(2){
@@ -484,6 +507,8 @@ body{
   @media screen and (min-width:1024px) {
         .footer{
             .wrap{
+                max-width: 1200px;
+                margin: 0 auto;
                 .item:nth-child(odd){
                     &:before{
                         right: -3%;

@@ -131,6 +131,8 @@
   .index_banner .wrap {
     grid-template-columns: 70% 30%;
     grid-template-rows: auto auto auto;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .index_banner .wrap .item:nth-child(1) {
     grid-area: 1/1/2/2;
@@ -301,6 +303,10 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .slogan {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .slogan .txt_box p {
     padding: 100px 0 0 80px;
     margin: 0;
@@ -397,19 +403,19 @@
 
 @-webkit-keyframes scroll {
   from {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 @-webkit-keyframes scroll2 {
@@ -417,7 +423,7 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
 }
 @keyframes scroll2 {
@@ -425,7 +431,23 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
+  }
+}
+@-webkit-keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(-144%);
+  }
+}
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(-144%);
   }
 }
 .sliders {
@@ -436,37 +458,22 @@
 }
 .sliders .wrapper {
   display: flex;
-}
-.sliders .wrapper:nth-child(1) {
-  -webkit-animation: scroll 40s linear infinite;
-          animation: scroll 40s linear infinite;
-  -webkit-animation-delay: -20s;
-          animation-delay: -20s;
-}
-.sliders .wrapper:nth-child(2) {
-  -webkit-animation: scroll2 40s linear infinite;
-          animation: scroll2 40s linear infinite;
+  -webkit-animation: scrolling 20s linear infinite;
+          animation: scrolling 20s linear infinite;
 }
 .sliders .wrapper .item {
-  height: 200px;
-  margin: 0 10px;
-  position: relative;
+  flex: 0 0 16%;
+  margin: 0 1%;
 }
 .sliders .wrapper .item img {
-  height: 100%;
-}
-.sliders .wrapper .item .desq {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(10, 19, 77, 0.062745098);
+  width: 100%;
 }
 .sliders .wrapper .item h3 {
   text-align: center;
   font-size: 16px;
-  color: #333;
+  color: rgba(0, 0, 0, 0.5647058824);
   font-family: "David Libre", serif;
+  margin-top: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -809,8 +816,7 @@ section.discount {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-attachment: scroll;
+  background-attachment: scroll;
   position: relative;
 }
 section.discount .item {

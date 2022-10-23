@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5F coffee</title>
+    <title>5F coffee | Reservation</title>
    
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="grid_system.css">
-    <link rel="stylesheet" href="css/member.css">
+    <link rel="stylesheet" href="css/grid_system.css">
+    <link rel="stylesheet" href="css/reservation.css">
     <link rel="stylesheet" href="css/common.css">
 
     <!-- font David Libre -->
@@ -26,7 +26,8 @@
 
     <link rel="icon" href="logo.ico">
     <!-- jquery -->
-    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -47,57 +48,116 @@
                 <ul class="nav_links">
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="course.html">Course</a></li>
-                    <li><a href="reservation.html">Reservation</a></li>
+                    <li class="tab"><a href="reservation.html">Reservation</a></li>
                     <li><a href="product.html">Products</a></li>
-                    <li><a href="faq.html" class="faq">FAQ</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
             <!-- function -->
             <div class="function_box">
-                <a href="member.html" class="tab"><i class="fa-solid fa-user"></i></a>
+                <a href="member.html"><i class="fa-solid fa-user"></i></a>
                 <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
         </div>
     </header>
-    <!-- banner  login & register-->
-    <section class="member_banner">
-        <div class="wrap">
-            <div class="imgbox">
-                <img src="image/people-y3.png" alt="portafilter">
-            </div>
-            <div class="text_box">
-                <div class="form_box">
-                    <div class="nav_box">
-                        <span onclick="login()">Login</span>
-                        <span onclick="register()">Register</span>
-                        <hr id="Indicitor">
-                    </div>
-                    <!-- login -->
-                    <form id="LoginForm">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Login</button>
-                        <a href="#">Forgot password</a>
-                    </form>
-                    <!-- register -->
-                    <form id="RegForm">
-                        <input type="text" placeholder="Username">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Register</button>
-                    </form>
+    <!-- reservation_banner -->
+    <section class="reservation">
+        <div class="txt_box">
+            <p>Wenn der Altenberg nicht im Kaffeehaus ist, ist er am Weg dorthin</p>
+           
+        </div>
+        <div class="img_box">
+            <img src="image/reservation_banner.jpg" alt="coffee">
+        </div>
+        <div class="form_box">
+            <form>
+                <!-- name -->
+                <div class="item">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
                 </div>
+                <!-- phone -->
+                <div class="item">
+                    <label for="phone">Phone</label>
+                    <input type="tel" maxlength="10" id="phone">
+                </div>
+                <!-- mail -->
+                <div class="item">
+                    <label for="mail">Mail</label>
+                    <input type="mail" id="mail">
+                </div>
+                <!-- party size -->
+                <div class="item">
+                    <label>Party Size</label>
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <!-- date -->
+                <div class="item">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" min="2022-10-26" max="2023-1-26" placeholder="10/26/2022">
+                    <!-- <input type="text" id="date" min="2022-10-26" max="2022-11-26" placeholder="10/26/2022" type="text" onfocus="(this.type = 'date')"> -->
+                </div>
+                <!-- time -->
+                <div class="item">
+                    <label for="time">Time</label>
+                    <select>
+                        <option value="1">08:00</option>
+                        <option value="2">08:30</option>
+                        <option value="3">09:00</option>
+                        <option value="4">09:30</option>
+                        <option value="5">10:00</option>
+                        <option value="6">10:30</option>
+                        <option value="7">11:00</option>
+                        <option value="8">11:30</option>
+                        <option value="9">12:00</option>
+                        <option value="10">12:30</option>
+                        <option value="11">13:00</option>
+                        <option value="12">13:30</option>
+                        <option value="13">14:00</option>
+                        <option value="14">14:30</option>
+                        <option value="15">15:00</option>
+                        <option value="16">15:30</option>
+                        <option value="17">16:00</option>
+                        <option value="18">16:30</option>
+                        <option value="19">17:00</option>
+                        <option value="20">17:30</option>
+                        <option value="21">18:00</option>
+                        <option value="22">18:30</option>
+                        <option value="23">19:00</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+       
+    </section>
+    <!-- slogan_box -->
+    <section class="slogan_box">
+        <div class="wrap">
+            <div class="img_box">
+                <img src="image/r1.jpg" alt="coffee">
+                <span></span>
             </div>
-            <div class="deco_box">
-                <img src="image/portafilter.png" alt="">
+            <div class="txt_box">
+                <p>It’s time to enjoy the finer things in life.</p>
+                <img src="image/r2.jpg" alt="coffee">
             </div>
         </div>
-         
-        <!-- <div class="imgbox">
-            <img src="image/people-y3.png" alt="portafilter">
-        </div> -->
-     </section>
-     <!-- footer -->
+        
+    </section>
+
+    <!-- footer -->
     <footer class="footer">
         <div class="wrap">
             <div class="item open">
@@ -168,21 +228,6 @@
             <p>本網站為緯育TibaMe前端設計工程師班第79期學員專題作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊 [緯育TibaMe] ，後續會由專人協助處理</p>
         </div>
     </footer>
-     <!-- -----script------ -->
-     <script>
-        var LoginForm = document.getElementById("LoginForm");
-        var RegForm = document.getElementById("RegForm");
-        var Indicitor = document.getElementById("Indicitor");
-        function register(){
-            RegForm.style.transform= "translateX(0px)";
-            LoginForm.style.transform= "translateX(0px)";
-            Indicitor.style.transform= "translateX(155px)";
-        } 
-        function login(){
-            RegForm.style.transform= "translateX(300px)";
-            LoginForm.style.transform= "translateX(300px)"
-            Indicitor.style.transform= "translateX(50px)";
-        } 
-     </script>
+
 </body>
 </html>

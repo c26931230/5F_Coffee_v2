@@ -44,6 +44,8 @@
   .course_banner {
     position: relative;
     margin-bottom: 50px;
+    margin: 0 auto;
+    width: 100%;
   }
   .course_banner .txt_box {
     background-color: #13334E;
@@ -66,7 +68,11 @@
   .course_banner .img_box img {
     width: 100%;
     vertical-align: top;
-    opacity: 0.8;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .course_banner {
+    max-width: 1200px;
   }
 }
 .benfit h3 {
@@ -115,6 +121,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .benfit {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .benfit h3 {
     padding: 50px 100px;
   }
@@ -130,6 +140,8 @@
 }
 .best_experience {
   padding: 50px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .best_experience .wrap .item:nth-child(1) h3 {
   color: #607EAA;
@@ -249,10 +261,10 @@
     font-size: 18px;
   }
 }
-.testimonials {
-  border: 1px solid red;
+section.feedback {
+  padding: 50px 0;
 }
-.testimonials h3 {
+section.feedback h3 {
   font-size: 30px;
   color: #607EAA;
   font-weight: 600;
@@ -260,50 +272,77 @@
   margin-bottom: 10px;
   padding: 30px;
 }
-.testimonials .wrap {
+section.feedback .container {
+  width: 100%;
+}
+section.feedback .container .item {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-.testimonials .wrap .item {
-  width: 90%;
-  border-radius: 10px;
-  margin: 0 auto 20px;
-  background: rgba(96, 126, 170, 0.062745098);
-  padding: 25px;
+  justify-content: center;
+  background-color: #f5f4f2;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
 }
-.testimonials .wrap .item img {
-  height: 40px;
-  margin-left: 5px;
-  margin-right: 30px;
+section.feedback .container .item:hover {
+  transform: translateY(-5%);
+}
+section.feedback .container .item .img_box {
+  width: 70px;
+  text-align: center;
+}
+section.feedback .container .item .img_box .img_data {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+section.feedback .container .item .img_box img {
+  width: 100%;
   vertical-align: top;
 }
-.testimonials .wrap .item p {
-  padding: 0;
+section.feedback .container .item .text_box {
+  width: 0;
+  flex-grow: 1;
 }
-.testimonials .wrap .item p.name {
-  margin: 15px 0;
-  text-align: left;
+section.feedback .container .item .text_box .name {
   font-size: 20px;
   font-weight: 600;
+  margin: 20px 0;
+  color: #333;
 }
-.testimonials .wrap .item i {
+section.feedback .container .item .text_box i {
   color: #333;
   font-size: 16px;
 }
+section.feedback .container .item .text_box p {
+  color: rgba(0, 0, 0, 0.5647058824);
+}
+section.feedback .btn_box {
+  text-align: center;
+  color: #E77710;
+  margin-top: 10px;
+}
+section.feedback .btn_box .btn {
+  display: inline-block;
+  font-size: 14px;
+  color: #E77710;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+section.feedback .btn_box .btn:hover {
+  transform: scale(0.9);
+}
 
-@media (min-width: 768px) {
-  .testimonials .wrap {
-    width: 90%;
-    border: 1px solid red;
-    margin: 0 auto;
-    justify-content: center;
+@media screen and (min-width: 768px) {
+  section.feedback h2 {
+    font-size: 50px;
   }
-  .testimonials .wrap .item {
-    width: 30%;
+  .feedback .container .row .item {
+    height: 100%;
   }
 }/*# sourceMappingURL=course_index.css.map */

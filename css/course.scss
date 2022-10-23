@@ -8,9 +8,18 @@ $main7:#f5f4f2;
 
 .main_course{
     background-color: $main7;
-    padding: 50px 0;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    h3{
+        color: $main5;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 35px 0;
+    }
     .container{
-        width: 80%;
+        width: 100%;
         .row{
             .item{
                 position: relative;
@@ -18,12 +27,11 @@ $main7:#f5f4f2;
                 border-radius: 5px;
                 overflow: hidden;
                 display: inline-block;
-                // width: 230px;
                 margin-bottom: 30px;
                 box-shadow: 0 0 15px rgba(0,0,0,.1);
                 .sale{
                     position: absolute;
-                    top: 20px;
+                    top: 14px;
                     right: -30px;
                     transform: rotate(45deg);
                     padding: 10px 25px;
@@ -41,20 +49,18 @@ $main7:#f5f4f2;
                     text-align: center;
                     img{
                         width: 80%;
-                        // border: 1px solid red;
-                        // margin: 0 auto;
                         vertical-align: top;
                     }
                 }
                 .txt_box{
                     padding: 5px 10px;
-                    h3{
+                    h4{
                         font-size: 20px;
                         color: $main5;
                         font-weight: 600;
                         margin-bottom: 5px;
                     }
-                    h3+p{ //level
+                    h4+p{ //level
                         color: #00000050;
                         font-size: 16px;
                         margin-bottom: 5px;
@@ -103,6 +109,19 @@ $main7:#f5f4f2;
                 .item{
                     margin-bottom: 20px;
                   
+                }
+            }
+        }
+    }
+}
+
+//400以下手機
+@media screen and (max-width:400px) {
+    .main_course{
+        .container{
+            .row{
+                .col-6{
+                    width: 100%;
                 }
             }
         }

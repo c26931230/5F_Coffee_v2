@@ -8,8 +8,10 @@ $main7:#f5f4f2;
 //-----all product-----
 .main_area{
     color: #333;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+    max-width: 1200px;
+    margin: 100px auto;
     
     .title{
         margin-bottom: 100px;
@@ -221,7 +223,7 @@ $main7:#f5f4f2;
             .aside{
                 display: none;
                 width: 100%;
-                background-color: $main5;
+                background-color: $main6;
                 padding: 30px 0;
                 // top: 65px;
                 z-index: 5;
@@ -233,6 +235,10 @@ $main7:#f5f4f2;
                         border-color: $main2;
                         color: $main2;
                         
+                    }
+                    input:focus{
+                        border: 2px solid $main2;
+                        border-right: none;
                     }
                     ::placeholder{
                         color: #ffffff90;
@@ -273,7 +279,6 @@ $main7:#f5f4f2;
                     
                     .slider{
                         background-color: $main5;
-                        // border: 1px solid red;
                         .progress{
                             background-color: $main2;
                         }
@@ -443,11 +448,11 @@ $main7:#f5f4f2;
         }
     }
     input:focus{
-        border: 1px solid $main4;
+        border: 2px solid #333;
         border-right: none;
     }
     input:focus + .icon_box{
-        border: 1px solid $main4;
+        border: 2px solid #333;
         border-left: none;
     }
    

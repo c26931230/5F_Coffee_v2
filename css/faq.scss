@@ -27,6 +27,11 @@ $main7:#f5f4f2;
     // top: -100%;
     transition: 2s;
     overflow: hidden;
+    
+    .wrap{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
     h2{
         text-align: center;
         color: $main4;
@@ -124,10 +129,12 @@ $main7:#f5f4f2;
 .faq{
     background-color: $main7;   
     color: #333;
+    
     .wrap{
         width: 80%;
         padding-top: 50px;
         margin: 0 auto;
+        max-width: 1200px;
         .item{
             background-color: $main2;
             border-radius: 5px;

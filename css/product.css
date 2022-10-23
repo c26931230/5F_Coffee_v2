@@ -1,7 +1,7 @@
 .main_area {
   color: #333;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  max-width: 1200px;
+  margin: 100px auto;
 }
 .main_area .title {
   margin-bottom: 100px;
@@ -189,7 +189,7 @@
   .main_area .wrap .aside {
     display: none;
     width: 100%;
-    background-color: #607EAA;
+    background-color: #13334E;
     padding: 30px 0;
     z-index: 5;
   }
@@ -199,6 +199,10 @@
   .main_area .wrap .aside .search_bar input {
     border-color: #fff;
     color: #fff;
+  }
+  .main_area .wrap .aside .search_bar input:focus {
+    border: 2px solid #fff;
+    border-right: none;
   }
   .main_area .wrap .aside .search_bar ::-moz-placeholder {
     color: rgba(255, 255, 255, 0.5647058824);
@@ -400,10 +404,10 @@
   color: #F1D00A;
 }
 .search_bar input:focus {
-  border: 1px solid #F1D00A;
+  border: 2px solid #333;
   border-right: none;
 }
 .search_bar input:focus + .icon_box {
-  border: 1px solid #F1D00A;
+  border: 2px solid #333;
   border-left: none;
 }/*# sourceMappingURL=product.css.map */

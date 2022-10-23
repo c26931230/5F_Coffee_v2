@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, button, label, p {
   font-family: "David Libre", serif;
 }
 
@@ -41,6 +41,7 @@ body {
 @media screen and (min-width: 1200px) {
   .header .wrap {
     max-width: 1200px;
+    margin: 0 auto;
   }
 }
 .logo_box img {
@@ -286,6 +287,9 @@ body {
   width: -moz-fit-content;
   width: fit-content;
 }
+.footer .wrap .item:nth-child(3) .icon_box a:hover {
+  color: #F1D00A;
+}
 .footer .wrap .item:nth-child(4) .text_box {
   width: 70%;
   margin: 0 auto;
@@ -302,8 +306,20 @@ body {
   position: relative;
   text-align: center;
 }
+.footer .wrap .item:nth-child(4) .text_box .data .icon a {
+  transition: 0.5;
+}
+.footer .wrap .item:nth-child(4) .text_box .data .icon a:hover {
+  color: #F1D00A;
+}
 .footer .wrap .item:nth-child(4) .text_box .data .text {
   width: 85%;
+}
+.footer .wrap .item:nth-child(4) .text_box .data .text a {
+  transition: 1s;
+}
+.footer .wrap .item:nth-child(4) .text_box .data .text a:hover {
+  color: #F1D00A;
 }
 .footer .wrap .item:nth-child(4) .text_box .data:nth-child(2) .icon a i {
   font-size: 26px;
@@ -408,6 +424,10 @@ body {
   }
 }
 @media screen and (min-width: 1024px) {
+  .footer .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .footer .wrap .item:nth-child(odd):before {
     right: -3%;
   }
