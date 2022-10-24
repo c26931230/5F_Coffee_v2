@@ -53,29 +53,75 @@ rangeInput.forEach(input=>{
     
 })
 
-// filter
+// -----filter-----
+// $(document).ready(function(){
+            
+//     $('#product_filter').click(function(){
+//         $('#product_aside').slideDown(1000)
+//         $('#product_filter').css({
+//             display:'none',
+//         })
+//         $('#match_box').css({
+//             display:'none',
+//         })
+//     })
+//     $('#filter_cancel').click(
+//         function(){
+//             $('#product_aside').slideUp(1000)
+//             $('#product_filter').css({
+//                 display:'block',
+//             })
+//             $('#match_box').css({
+//             display:'block',
+//         })
+//         }
+//     )
+//     let winWidth = $(window).width();
+//     // let 
+//     // // if(winWidth > 768 && )
+//     if(($('#product_filter').is(":hidden")) && winWidth > 768) {
+//         $("#product_aside").show();  
+//         $('#product_filter').css({
+//             display:'none',
+//         });  
+//  } 
+// })
+// -----filter2-----
 $(document).ready(function(){
             
     $('#product_filter').click(function(){
-        $('#product_aside').slideDown(1000)
-        $('#product_filter').css({
-            display:'none',
+        $('#product_aside').css({
+            left:0,
         })
-        $('#match_box').css({
-            display:'none',
-        })
+        // $('#product_filter').css({
+        //     display:'none',
+        // })
+        // $('#match_box').css({
+        //     display:'none',
+        // })
     })
     $('#filter_cancel').click(
         function(){
-            $('#product_aside').slideUp(1000)
-            $('#product_filter').css({
-                display:'block',
+            $('#product_aside').css({
+                left:'-100%'
             })
-            $('#match_box').css({
-            display:'block',
-        })
+        //     $('#product_filter').css({
+        //         display:'block',
+        //     })
+        //     $('#match_box').css({
+        //     display:'block',
+        // })
         }
     )
+    let winWidth = $(window).width();
+    // let 
+    // // if(winWidth > 768 && )
+    if(($('#product_filter').is(":hidden")) && winWidth > 768) {
+        $("#product_aside").show();  
+        $('#product_filter').css({
+            display:'none',
+        });  
+ } 
 })
 
 
@@ -114,6 +160,7 @@ function init(){
 //     }
     
 // }
+
 
 $('.color_img').click(function(){
     $(this).css({

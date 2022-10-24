@@ -141,13 +141,14 @@ body {
     width: 36px;
     height: 36px;
     position: relative;
+    border: 1px red solid;
   }
   .hb span {
     width: 28px;
     height: 3px;
     background-color: #fff;
     margin: auto;
-    position: absolute;
+    cursor: pointer;
   }
   .hb span:nth-child(1) {
     top: 9px;
@@ -174,6 +175,12 @@ body {
   }
   .nav li :after {
     background: none;
+  }
+  .nav li :after:hover {
+    display: none;
+  }
+  .nav li.tab :after {
+    display: none;
   }
   .nav li:last-child a {
     border-bottom: none;
