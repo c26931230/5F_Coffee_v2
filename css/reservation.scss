@@ -5,11 +5,39 @@ $main4:#F1D00A;
 $main5:#607EAA;
 $main6:#13334E;
 $main7:#f5f4f2;
+@mixin fadeout {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 2.5s;
+}
+@mixin fadein {
+    opacity: 1;
+    transform: scale(1);
+    transition: 2.5s;
+}
+@mixin ltr {
+    transform: translateX(-100%);
+    transition: 2.5s;
+    opacity: 0;
+}
+@mixin rl_active {
+    transform: translateX(0%);
+    transition: 2.5s;
+    opacity: 1;
+}
+@mixin rtl {
+    transform: translateX(100%);
+    transition: 2.5s;
+    opacity: 0;
+}
+
 //----- 手機 reservation_banner-----
 .reservation{
+    overflow-x: hidden;
     .txt_box{
         padding: 50px 0;
         position: relative;
+        @include fadeout();
         p{
             font-size: 30px;
             color: $main5;
@@ -18,9 +46,14 @@ $main7:#f5f4f2;
             padding: 20px 40px;
         }
     }
+    .txt_box.active{
+        @include fadein();
+    }
     .form_box{
         background-color: $main6;
         padding: 30px 0;
+        @include ltr();
+        // transform: translateX(-10%);
         form{
             .item{
                 margin-bottom: 20px;
@@ -94,7 +127,10 @@ $main7:#f5f4f2;
                 }
             }
         }
-    }   
+    } 
+    .form_box.active{
+        @include rl_active();
+    }  
     .img_box{
         display: none;
     }
@@ -104,7 +140,7 @@ $main7:#f5f4f2;
     .reservation{
         display: flex;
         flex-wrap: wrap;
-        max-width: 1200px;
+        // max-width: 1200px;
         margin: 0 auto;
         height: 600px;
         .txt_box{
@@ -115,8 +151,10 @@ $main7:#f5f4f2;
             padding: 30px 10px;
             width: 85%;
             position: relative;
-            transform: translateY(-70%);
+            transform: translateY(-70%) translateX(-100%);
+            // opacity: 1;
             border-radius: 0 10px 10px 0;
+            
             form{
                 display: flex;
                 flex-wrap: wrap;
@@ -153,10 +191,18 @@ $main7:#f5f4f2;
         .img_box{
             display: block;
             width: 50%;
+            @include rtl();
             img{
                 width: 100%;
                 vertical-align: top;
             }
+        }
+        .img_box.active{
+            @include rl_active();
+        }
+        .form_box.active{
+            // transform: translateY(-70%) translateX(-0%);
+            transform: translateY(-70%) translateX(0%);
         }
     }
 }
@@ -171,7 +217,11 @@ $main7:#f5f4f2;
             }
         }
         .form_box{
-            transform: translateY(-120%);
+            transform: translateY(-120%) translateX(-100%);
+            border-radius: 0 10px 10px 0;
+        }   
+        .form_box.active{
+            transform: translateY(-120%) translateX(-0%);
             border-radius: 0 10px 10px 0;
         }   
         .img_box{
@@ -182,28 +232,11 @@ $main7:#f5f4f2;
     }
 }
 
-// -----ipad pro 筆電 reservation_banner-----
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1920px){
     .reservation{
-        .txt_box{
-            padding: 50px 0;
-            p{
-                font-size: 40px;
-            }
-        }
-        .form_box{
-            transform: translateY(-120%);
-            border-radius: 0 10px 10px 0;
-        }   
-        .img_box{
-            img{
-                border-radius:0 0 0 10px;
-            }
-        }
+        max-width: 1200px;
     }
-    
 }
-
 // -----手機 slogan_box-----
 .slogan_box{
     display: flex;
@@ -213,6 +246,7 @@ $main7:#f5f4f2;
     // margin-bottom: 0;
     .img_box{ //把手 + 色塊
         width: 100%;
+        @include fadeout();
         img{
             width: 100%;
             vertical-align: top;
@@ -224,13 +258,19 @@ $main7:#f5f4f2;
             width: 100%;
             height: 180px;
             background: #F0EBD8;
-            display: block;
+            display: none;
             margin-top: 30px;
         }
+    }
+    .img_box.active{
+        @include fadein();
     }
     .txt_box{  //slogan + art
         width: 100%;
         transform: translateY(-20%);
+        @include fadeout();
+        // border: 1px solid red;
+        margin-bottom: 50px;
         p{
             font-size: 30px;
             color: $main5;
@@ -245,6 +285,10 @@ $main7:#f5f4f2;
             padding: 0 10px;
         }
     }
+    .txt_box.active{
+        @include fadein();
+    }
+    
 }
 
 // ------平板 slogan_box-----
@@ -254,6 +298,7 @@ $main7:#f5f4f2;
         position: relative;
         margin-bottom: 100px;
         display: block;
+        overflow-x: hidden;
         .wrap{
             margin: 0 auto;
             width: 90%;
@@ -268,6 +313,7 @@ $main7:#f5f4f2;
         .img_box{ //把手 + 色塊
             width: 50%;
             padding: 20px;
+            @include ltr();
             img{
                 width: 90%;
                 padding: 0;
@@ -278,12 +324,14 @@ $main7:#f5f4f2;
                 // position: absolute;
                 left: 0;
                 bottom: -70px;
+                display: block;
             }
         }
         .txt_box{  //slogan + art
             width: 50%;
             transform: translateY(10%);
             padding: 20px;
+            @include rtl();
             p{
                 font-size: 40px;
                 padding: 50px 50px 50px 0;

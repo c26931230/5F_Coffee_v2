@@ -5,6 +5,16 @@ $main4:#F1D00A;
 $main5:#607EAA;
 $main6:#13334E;
 $main7:#f5f4f2;
+@mixin fadeout {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 2.5s;
+}
+@mixin fadein {
+    opacity: 1;
+    transform: scale(1);
+    transition: 2.5s;
+}
 //-----all product-----
 .main_area{
     color: #333;
@@ -16,6 +26,7 @@ $main7:#f5f4f2;
     .title{
         margin-bottom: 100px;
         text-align: center;
+        @include fadeout();
         h2{
         color: $main5;
         font-size: 50px;
@@ -26,6 +37,9 @@ $main7:#f5f4f2;
             color: #333;
         }
     }
+    .title.active{
+        @include fadein();
+    }
     .wrap{
         display: flex;
         flex-wrap: wrap;
@@ -33,7 +47,8 @@ $main7:#f5f4f2;
         justify-content: space-between;
         width: 80%;
         margin: 0 auto;
-        // border: 1px solid red;   
+        // border: 1px solid red;
+        @include fadeout();   
         .aside{
             width: 20%;
             padding: 10px;
@@ -193,6 +208,9 @@ $main7:#f5f4f2;
             }
         }
     }
+    .wrap.active{
+        @include fadein();
+    }
 }
 // 平板直 product
 @media screen and (min-width:768px) {
@@ -229,6 +247,7 @@ $main7:#f5f4f2;
                 z-index: 5;
                 position: fixed;//n
                 left: -100%;
+                opacity: 0;
                 transition: 1s;
                 h3{
                     color: $main4;

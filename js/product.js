@@ -1,3 +1,12 @@
+// ------product.html 動畫----
+window.onload = function(){
+    let product_title = document.querySelectorAll(".title")
+    let product_wrap = document.querySelectorAll(".fadein")
+    for(let i=0; i < product_title.length; i++){
+        product_title[i].classList.add("active");
+        product_wrap[i].classList.add("active");
+    }
+}
 // -----price slider bar-----
 const rangeInput = document.querySelectorAll(".range-input input");
 const priceInput = document.querySelectorAll(".price-input input");
@@ -31,8 +40,6 @@ rangeInput.forEach(input=>{
         let minVal = parseInt(rangeInput[0].value),
         maxVal = parseInt(rangeInput[1].value);
 
-        // let percent = (minVal / rangeInput[0].max) * 100;
-        // console.log(minVal,maxVal, percent)
         if(maxVal - minVal < priceGap){
             if(e.target.className === "range-min"){
                 rangeInput[0].value = maxVal - priceGap;
@@ -92,30 +99,17 @@ $(document).ready(function(){
     $('#product_filter').click(function(){
         $('#product_aside').css({
             left:0,
+            opacity:1,
         })
-        // $('#product_filter').css({
-        //     display:'none',
-        // })
-        // $('#match_box').css({
-        //     display:'none',
-        // })
     })
     $('#filter_cancel').click(
         function(){
             $('#product_aside').css({
                 left:'-100%'
             })
-        //     $('#product_filter').css({
-        //         display:'block',
-        //     })
-        //     $('#match_box').css({
-        //     display:'block',
-        // })
         }
     )
     let winWidth = $(window).width();
-    // let 
-    // // if(winWidth > 768 && )
     if(($('#product_filter').is(":hidden")) && winWidth > 768) {
         $("#product_aside").show();  
         $('#product_filter').css({
@@ -151,15 +145,6 @@ function init(){
     }
 }
 // -----產品顏色----
-// function changeColor(){
-//     let colorImgs =document.getElementsByClassName('color_img');
-//     for(let i=0; i<colorImgs.length; i++){
-//         colorImgs[i].onclick = function(){
-//             this.style.borderStyle = "2px solid #333";
-//         }
-//     }
-    
-// }
 
 
 $('.color_img').click(function(){

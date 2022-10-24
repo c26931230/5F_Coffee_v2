@@ -1,5 +1,6 @@
 .product_detail {
   padding: 50px 0;
+  overflow-x: hidden;
 }
 .product_detail .container {
   width: 80%;
@@ -145,6 +146,35 @@
   margin: 10px 0;
 }
 
+.ltr {
+  transform: translateX(-100%);
+  transition: 2.5s;
+  opacity: 0;
+}
+
+.ltr.active {
+  transform: translateX(0%);
+  transition: 2.5s;
+  opacity: 1;
+}
+
+.rtl.active {
+  transform: translateX(0%);
+  transition: 2.5s;
+  opacity: 1;
+}
+
+.rtl {
+  transform: translateX(100%);
+  transition: 2.5s;
+  opacity: 0;
+}
+
+.product_recommend {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 2.5s;
+}
 .product_recommend .product_area {
   padding: 50px 0;
   background-color: transparent;
@@ -158,4 +188,10 @@
   padding-bottom: 50px;
   font-size: 50px;
   font-weight: 600;
+}
+
+.product_recommend.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 2.5s;
 }/*# sourceMappingURL=product_detail.css.map */

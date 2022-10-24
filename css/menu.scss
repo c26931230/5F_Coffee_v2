@@ -5,12 +5,28 @@ $main4:#F1D00A;
 $main5:#607EAA;
 $main6:#13334E;
 $main7:#f5f4f2;
+@mixin fadeout {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 2.5s;
+}
+@mixin fadein {
+    opacity: 1;
+    transform: scale(1);
+    transition: 2.5s;
+}
 // -----平板以上menu_bar-----
 .menu_slogan{
     text-align: center;
     margin-bottom: 50px;
     font-size: 20px;
     color: #333;
+    @include fadeout();
+    display: block
+    
+}
+.menu_slogan.active{
+    @include fadein();
 }
 .menu_bar{
     height: fit-content;
@@ -21,9 +37,10 @@ $main7:#f5f4f2;
     }
     .item{
         position: relative;
-        // margin-bottom: 20px;
         border-radius: 5px;
         overflow: hidden;
+        @include fadeout();
+        display: block;
         .layer{
             background: transparent;
             height: 100%;
@@ -59,6 +76,13 @@ $main7:#f5f4f2;
 
         }
     }
+    .item.active{
+        @include fadein();
+    }
+}
+.menu_bar.active{
+    opacity: 1;
+    transform: scale(1);
 }
 // -----手機板menu_bar-----
 @media screen and (max-width:767px) {
@@ -80,15 +104,16 @@ $main7:#f5f4f2;
 .coffee_menu_box, .tea_menu_box{
     background-color: $main7;
 }
+
 .coffee_menu_box, .pastry_menu_box, .tea_menu_box{
     margin-bottom: 100px;
     padding: 50px 0;
+    @include fadeout();
     .container{
         width: 80%;
     }
     .title_box{
         text-align: center;
-        // border: 1px solid red;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -122,19 +147,16 @@ $main7:#f5f4f2;
             font-size: 20px;
             color: #00000050;
             z-index: 2;
-            // font-family: 'David Libre', serif;
         }
     }
     .item{
         perspective: 1000px;
         cursor: pointer;
-        // border: 1px solid red;
         border-radius: 5px;
         overflow: hidden;
-        // box-shadow: 2px 2px 20px #ddd;
         box-shadow: 0 0 15px rgba(0,0,0,.1);
         margin: 20px 0;
-
+        display: block;
         .front{
             position: relative;
             transform-style: preserve-3d;
@@ -214,6 +236,13 @@ $main7:#f5f4f2;
 .tea_menu_box{
     margin-bottom: 0;
 }
+.coffee_menu_box.active{
+    @include fadein();
+}
+.coffee_menu_box.active, .pastry_menu_box.active, .tea_menu_box.active{
+    @include fadein();
+}
+
 @media screen and (max-width:767px) {
     .coffee_menu_box, .pastry_menu_box, .tea_menu_box{
         margin-bottom: 0;
@@ -275,17 +304,14 @@ $main7:#f5f4f2;
     z-index: 10;
     font-family: 'David Libre', serif;
     font-weight: 600;
-    // display: none;
     opacity: 0;
     transition: 1s;
   }
   #switch_menu.active{
-    // display: block;
     opacity: 1;
     right: 20px;
   }
   
   #switch_menu:hover {
-  //   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
     transform: translate3d(0, 10px, 0);
   }

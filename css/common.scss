@@ -39,6 +39,7 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // border: 1px solid gold;
     }
 }
 @media screen and (min-width:1200px) {
@@ -155,20 +156,15 @@ body{
         width: 36px;
         height: 36px;
         position: relative;
-        border: 1px red solid;
-        // cursor: pointer;
-        // // padding-right: 26px;
-        // // padding-bottom: 20px;
         // border: 1px red solid;
-        // // font-size: 20px;
-        // // padding: 10px 20px;
-        // // transform: translateX(10px);
+        display: inline-block;
+        cursor: pointer;
         span{
             width: 28px;
             height: 3px;
             background-color: $main2;
             margin: auto;
-            // position: absolute;
+            position: absolute;
             cursor: pointer;
         }
         

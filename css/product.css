@@ -6,6 +6,9 @@
 .main_area .title {
   margin-bottom: 100px;
   text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 2.5s;
 }
 .main_area .title h2 {
   color: #607EAA;
@@ -16,6 +19,11 @@
   font-size: 16px;
   color: #333;
 }
+.main_area .title.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 2.5s;
+}
 .main_area .wrap {
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +31,9 @@
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 2.5s;
 }
 .main_area .wrap .aside {
   width: 20%;
@@ -166,6 +177,11 @@
   background-color: #333;
   color: #fff;
 }
+.main_area .wrap.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 2.5s;
+}
 
 @media screen and (min-width: 768px) {
   .main_area .wrap .aside {
@@ -193,6 +209,7 @@
     z-index: 5;
     position: fixed;
     left: -100%;
+    opacity: 0;
     transition: 1s;
   }
   .main_area .wrap .aside h3 {

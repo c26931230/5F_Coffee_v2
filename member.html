@@ -32,13 +32,13 @@
     <!-- header -->
     <input type="checkbox" id="switch">
     <header class="header">
-        <!-- bar -->
-        <label class="hb" for="switch">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
         <div class="wrap">
+             <!-- bar -->
+            <label class="hb" for="switch">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="logo_box">
                 <a href="index.html"><img src="image/5flogo.png" alt="5F Coffee"></a>
             </div>
@@ -182,7 +182,19 @@
             RegForm.style.transform= "translateX(300px)";
             LoginForm.style.transform= "translateX(300px)"
             Indicitor.style.transform= "translateX(50px)";
+        }
+        // ------product.html 動畫----
+        window.onload = function(){
+            let text_box = document.querySelectorAll(".text_box")
+            let img_box = document.querySelectorAll(".imgbox")
+            let deco_box = document.querySelectorAll(".deco_box")
+            for(let i=0; i < text_box.length; i++){
+                text_box[i].classList.add("active");
+                img_box[i].classList.add("active");
+                deco_box[i].classList.add("active");
+            }
         } 
      </script>
+     
 </body>
 </html>

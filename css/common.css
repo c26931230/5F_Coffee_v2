@@ -141,13 +141,15 @@ body {
     width: 36px;
     height: 36px;
     position: relative;
-    border: 1px red solid;
+    display: inline-block;
+    cursor: pointer;
   }
   .hb span {
     width: 28px;
     height: 3px;
     background-color: #fff;
     margin: auto;
+    position: absolute;
     cursor: pointer;
   }
   .hb span:nth-child(1) {

@@ -5,6 +5,17 @@ $main4:#F1D00A;
 $main5:#607EAA;
 $main6:#13334E;
 $main7:#f5f4f2;
+@mixin fadeout {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 2.5s;
+}
+@mixin fadein {
+    opacity: 1;
+    transform: scale(1);
+    transition: 2.5s;
+}
+
 //-----手機 banner-----
 .course_banner{
     width: 100%;
@@ -13,6 +24,9 @@ $main7:#f5f4f2;
         background-color: $main6;
         width: 80%;
         padding: 50px 50px 70px 50px;
+        transform: translateX(-100%);
+        transition: 2.5s;
+        opacity: 0;
         h2{
             color: $main4;
             font-size: 30px;
@@ -27,15 +41,27 @@ $main7:#f5f4f2;
             color: #ffffff90;
         }
     }
+    .txt_box.active{
+        transform: translateX(0%);
+        transition: 2.5s;
+        opacity: 1;
+    }
     .img_box{
         width: 70%;
         margin-left: auto;
-        transform: translateY(-20%);
+        transform: translateY(-20%) translateX(100%);
+        // transform: translateX(-100%);
+        transition: 2.5s;
+        opacity: 0;
         img{
             width: 100%;
             vertical-align: top;
             opacity: 1;
         }
+    }
+    .img_box.active{
+        transform: translateY(-20%) translateX(0%);
+        opacity: 1;
     }
 }
 
@@ -67,23 +93,28 @@ $main7:#f5f4f2;
             padding: 50px 80px 50px 50px;
             z-index: 5;
             position: absolute;
-            position: absolute;
-            transform: translateY(-50%);
+            transform: translateY(-50%) translateX(-100%);
             top: 50%;
             h2{
                 font-size: 40px;
             }
 
         }
+        .txt_box.active{
+            transform: translateY(-50%) translateX(0%);
+        }
         .img_box{
             width: 80%;
             margin-left: auto;
-            transform: translateY(0%);
+            transform: translateY(0%) translateX(100%);
             img{
                 width: 100%;
                 vertical-align: top;
                 // opacity: .8;
             }
+        }
+        .img_box.active{
+            transform: translateY(0%) translateX(0%);
         }
     }
 }
@@ -95,6 +126,7 @@ $main7:#f5f4f2;
 }
 // -----手機 benfit-----
 .benfit{
+    @include fadeout();
     h3{
         color: $main5;
         font-weight: 600;
@@ -149,6 +181,9 @@ $main7:#f5f4f2;
         }
     }
 }
+.benfit.active{
+    @include fadein();
+}
 //----- 平板以上 benfit-----
 @media screen and (min-width:768px) {
     .benfit{
@@ -179,6 +214,8 @@ $main7:#f5f4f2;
     padding: 50px 0;
     max-width: 1200px;
     margin: 0 auto;
+    @include fadeout();
+
     .wrap{
         .item:nth-child(1){ //title
             h3{
@@ -252,7 +289,9 @@ $main7:#f5f4f2;
         
     }
 }
-
+.best_experience.active{
+    @include fadein();
+}
 // -----平板以上 best_experience-----
 @media screen and (min-width:768px) {
     .best_experience{
@@ -334,6 +373,7 @@ $main7:#f5f4f2;
 // // -----手機feedback-----
 section.feedback{
     padding: 50px 0;
+    @include fadeout();
     h3{
         font-size: 30px;
         color: $main5;
@@ -425,6 +465,9 @@ section.feedback{
             }
         }
     }
+}
+section.feedback.active{
+    @include fadein();
 }
 // 平板以上
 @media screen and (min-width:768px) {

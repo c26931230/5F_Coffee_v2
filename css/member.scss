@@ -5,21 +5,35 @@ $main4:#F1D00A;
 $main5:#607EAA;
 $main6:#13334E;
 $main7:#f5f4f2;
-
+@mixin ltr {
+    transform: translateX(-100%);
+    transition: 2.5s;
+    opacity: 0;
+}
+@mixin rl_active {
+    transform: translateX(0%);
+    transition: 2.5s;
+    opacity: 1;
+}
+@mixin rtl {
+    transform: translateX(100%);
+    transition: 2.5s;
+    opacity: 0;
+}
 
 //手機板
 .member_banner{
-    // min-height: calc(100vh - 65px);
     background-color: $main6;
-    // display: flex;
-    // flex-wrap: wrap;
-    // align-items: flex-end;
-    // justify-content: center;
     padding: 20px 0;
+    overflow-x: hidden;
     .text_box{
         width: 100%;
-        // border: 1px red solid;
         padding-bottom: 20px;
+        // border: 1px solid red;
+        @include ltr();
+    }
+    .text_box.active{
+        @include rl_active();
     }
     .nav_box{
         width: 100%;
@@ -74,11 +88,11 @@ $main7:#f5f4f2;
                 margin: 10px 0;
                 padding:10px 6px;
                 border: 1px solid #333;
-                font-size: 20px;
+                font-size: 16px;
                 width: 80%;
                 outline: none;
                 &:focus{
-                    border: 1px solid $main4;
+                    border: 2px solid #333;
                 }
             }
             input::placeholder{
@@ -127,6 +141,8 @@ $main7:#f5f4f2;
     }
     .imgbox{
         position: relative;
+        // border: 1px solid red;
+        @include rtl();
         img{
             width: 200px;
             position: relative;
@@ -135,9 +151,16 @@ $main7:#f5f4f2;
             vertical-align: top;
         }
     }
+    .imgbox.active{
+        @include rl_active();
+    }
     .deco_box{
         display: none;
+        // @include rtl()
     }
+    // .deco_box.active{
+    //     @include ltr();
+    // }
 }
 // ipad 直
 @media screen and (min-width:768px) {
@@ -156,6 +179,8 @@ $main7:#f5f4f2;
         }
         .imgbox{
             // width: 50%;
+            // border: 1px solid red;
+            @include ltr();
             grid-area: 1/1/2/2;
             img{
                 width: 200px;
@@ -172,6 +197,10 @@ $main7:#f5f4f2;
             grid-area: 1/2/3/3;
             display: block;
             position: relative;
+            // @include rtl();
+            transform: translateX(100%) scale(0.5);
+            transition: 2.5s;
+            opacity: 0;
             img{
                 width: 100%;
                 margin: auto 0;
@@ -179,6 +208,9 @@ $main7:#f5f4f2;
                 position: absolute;
                 transform: translateY(-50%);
             }
+        }
+        .deco_box.active{
+            @include rl_active();
         }
     }
 }

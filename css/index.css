@@ -131,7 +131,6 @@
   .index_banner .wrap {
     grid-template-columns: 70% 30%;
     grid-template-rows: auto auto auto;
-    max-width: 1200px;
     margin: 0 auto;
   }
   .index_banner .wrap .item:nth-child(1) {
@@ -176,6 +175,11 @@
   }
   .index_banner .wrap .item:nth-child(3) {
     padding: 10px 15px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .index_banner .wrap {
+    max-width: 1200px;
   }
 }
 .slogan {
@@ -401,39 +405,6 @@
   transform: scale(0.9);
 }
 
-@-webkit-keyframes scroll {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes scroll2 {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-200%);
-  }
-}
-@keyframes scroll2 {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-200%);
-  }
-}
 @keyframes scrolling {
   0% {
     transform: translateX(0);
@@ -447,7 +418,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translatex(-144%);
+    transform: translatex(-1440px);
   }
 }
 @keyframes scrolling {
@@ -455,7 +426,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translatex(-144%);
+    transform: translatex(-1440px);
   }
 }
 .sliders {
@@ -470,8 +441,8 @@
           animation: scrolling 20s linear infinite;
 }
 .sliders .wrapper .item {
-  flex: 0 0 16%;
-  margin: 0 1%;
+  flex: 0 0 160px;
+  margin: 0 10px;
 }
 .sliders .wrapper .item img {
   width: 100%;
