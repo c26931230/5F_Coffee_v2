@@ -89,11 +89,11 @@
   color: #F1D00A;
 }
 .search_bar input:focus {
-  border: 2px solid #fff;
+  border: 2px solid #F1D00A;
   border-right: none;
 }
 .search_bar input:focus + .icon_box {
-  border: 2px solid #fff;
+  border: 2px solid #F1D00A;
   border-left: none;
 }
 

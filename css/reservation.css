@@ -99,7 +99,6 @@
 .reservation .form_box form .btn button:hover {
   background-color: #E77710;
   transform: scale(0.9);
-  border: 1px solid #E77710;
 }
 .reservation .form_box.active {
   transform: translateX(0%);
