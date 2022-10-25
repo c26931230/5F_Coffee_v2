@@ -1,5 +1,5 @@
 .reservation {
-  overflow-x: hidden;
+  width: 100%;
 }
 .reservation .txt_box {
   padding: 50px 0;

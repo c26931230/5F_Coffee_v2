@@ -33,7 +33,10 @@ $main7:#f5f4f2;
 
 //----- 手機 reservation_banner-----
 .reservation{
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    // overflow-y: visible;
+    // border: 1px red solid;
+    width: 100%;
     .txt_box{
         padding: 50px 0;
         position: relative;
