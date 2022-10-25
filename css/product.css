@@ -337,6 +337,9 @@
     font-size: 14px;
     padding: 8px 5px;
   }
+  .main_area .wrap .main .data select:focus {
+    border: 2px #333 solid;
+  }
   .main_area .wrap .main .product_area .container {
     padding: 0 10px;
   }

@@ -382,6 +382,10 @@ $main7:#f5f4f2;
                     select{
                         font-size: 14px;
                         padding: 8px 5px;
+                        // border: 1px red solid;
+                        &:focus{
+                            border: 2px #333 solid;
+                        }
                     }
                 }
                 .product_area{
