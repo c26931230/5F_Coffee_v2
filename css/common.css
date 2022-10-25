@@ -115,7 +115,7 @@ body {
   #switch:checked + .header .nav {
     left: 0;
     opacity: 1;
-    transition: opacity 1s 2s, left 1s 1s;
+    transition: opacity 1s 0.5s, left 1s 0s;
   }
   #switch:checked + .header .hb span:nth-child(2) {
     opacity: 0;
@@ -173,7 +173,7 @@ body {
     width: 100%;
     background-color: #13334E;
     opacity: 0.2;
-    transition: left 1s 1s, opacity 1s 1s;
+    transition: left 1s 0s, opacity 0.5s 0s;
   }
   .nav li :after {
     background: none;
@@ -191,6 +191,7 @@ body {
     width: 100%;
     border-bottom: 1px solid #F1D00A;
     background-color: rgba(231, 119, 16, 0);
+    padding: 20px 10px;
   }
   .nav a:hover {
     background-color: #E77710;

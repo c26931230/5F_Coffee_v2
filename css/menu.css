@@ -4,14 +4,12 @@
   font-size: 20px;
   color: #333;
   opacity: 0;
-  transform: scale(0.8);
   transition: 2.5s;
   display: block;
 }
 
 .menu_slogan.active {
   opacity: 1;
-  transform: scale(1);
   transition: 2.5s;
 }
 
@@ -30,7 +28,6 @@
   border-radius: 5px;
   overflow: hidden;
   opacity: 0;
-  transform: scale(0.8);
   transition: 2.5s;
   display: block;
 }
@@ -74,7 +71,7 @@
 
 .menu_bar.active {
   opacity: 1;
-  transform: scale(1);
+  transition: 2.5s;
 }
 
 @media screen and (max-width: 767px) {

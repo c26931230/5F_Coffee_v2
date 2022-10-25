@@ -21,12 +21,16 @@ $main7:#f5f4f2;
     margin-bottom: 50px;
     font-size: 20px;
     color: #333;
-    @include fadeout();
+    // @include fadeout();
+    opacity: 0;
+    transition: 2.5s;
     display: block
     
 }
 .menu_slogan.active{
-    @include fadein();
+    // @include fadein();
+    opacity: 1;
+    transition: 2.5s;
 }
 .menu_bar{
     height: fit-content;
@@ -39,7 +43,9 @@ $main7:#f5f4f2;
         position: relative;
         border-radius: 5px;
         overflow: hidden;
-        @include fadeout();
+        // @include fadeout();
+        opacity: 0;
+        transition: 2.5s;
         display: block;
         .layer{
             background: transparent;
@@ -82,7 +88,8 @@ $main7:#f5f4f2;
 }
 .menu_bar.active{
     opacity: 1;
-    transform: scale(1);
+    // transform: scale(1);
+    transition: 2.5s;
 }
 // -----手機板menu_bar-----
 @media screen and (max-width:767px) {
