@@ -10,7 +10,7 @@ $(function(){
         transform:'translateX(0%)',
     })
     $('.faq>.wrap>.item').css({
-        transform:' scale(1)',
+        // transform:' scale(1)',
         opacity: 1,
     })
     // faq收合動畫

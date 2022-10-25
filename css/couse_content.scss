@@ -111,6 +111,7 @@ $main7:#f5f4f2;
             margin-right: auto;
             width: fit-content;
             transition: 0.5;
+            font-size: 18px;
             &:hover{
                 transform: scale(0.9);
             }
@@ -193,8 +194,8 @@ $main7:#f5f4f2;
 
 // ----skill----
 .skill_box{
+    margin-bottom: 50px;
     .txt_box{
-        // padding: 50px;
         position: relative;
         margin-bottom: 50px;
         @include fadeout();
@@ -213,8 +214,7 @@ $main7:#f5f4f2;
         img{
             width: 100%;
             margin-top: 50px;
-            // position: absolute;
-            // bottom: 0;
+            padding: 0 10px;
         }
     }
     .txt_box.active{

@@ -83,6 +83,7 @@
   width: -moz-fit-content;
   width: fit-content;
   transition: 0.5;
+  font-size: 18px;
 }
 .sale_box .info_box .btn:hover {
   transform: scale(0.9);
@@ -159,6 +160,9 @@
     transform: scale(0.9);
   }
 }
+.skill_box {
+  margin-bottom: 50px;
+}
 .skill_box .txt_box {
   position: relative;
   margin-bottom: 50px;
@@ -181,6 +185,7 @@
 .skill_box .txt_box img {
   width: 100%;
   margin-top: 50px;
+  padding: 0 10px;
 }
 .skill_box .txt_box.active {
   opacity: 1;

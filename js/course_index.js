@@ -46,7 +46,7 @@ $(document).ready(function(){
     function main_course_appear(){
         let main_course_outerHeight = $('.main_course').outerHeight();
         let main_course_offsetTop = $('.main_course').offset().top;
-        if (scrollY + innerHeight -  main_course_outerHeight / 4 >  main_course_offsetTop) {
+        if (scrollY + innerHeight -  main_course_outerHeight / 6 >  main_course_offsetTop) {
             $('.main_course').addClass('active')
           }else{
             $('.main_course').removeClass('active')

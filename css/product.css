@@ -32,7 +32,6 @@
   width: 80%;
   margin: 0 auto;
   opacity: 0;
-  transform: scale(0.8);
   transition: 2.5s;
 }
 .main_area .wrap .aside {
@@ -179,7 +178,6 @@
 }
 .main_area .wrap.active {
   opacity: 1;
-  transform: scale(1);
   transition: 2.5s;
 }
 

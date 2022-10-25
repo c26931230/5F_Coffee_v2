@@ -48,7 +48,9 @@ $main7:#f5f4f2;
         width: 80%;
         margin: 0 auto;
         // border: 1px solid red;
-        @include fadeout();   
+        // @include fadeout();   
+        opacity: 0;
+        transition: 2.5s;
         .aside{
             width: 20%;
             padding: 10px;
@@ -209,7 +211,9 @@ $main7:#f5f4f2;
         }
     }
     .wrap.active{
-        @include fadein();
+        // @include fadein();
+        opacity: 1;
+        transition: 2.5s;
     }
 }
 // 平板直 product
