@@ -105,9 +105,4 @@
   .main_course .container .row .item {
     margin-bottom: 20px;
   }
-}
-@media screen and (max-width: 300px) {
-  .main_course .container .row .col-6 {
-    width: 100%;
-  }
 }/*# sourceMappingURL=course.css.map */
